@@ -1,6 +1,3 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
-
 export default function Home() {
   return (
     <>
@@ -56,6 +53,11 @@ export default function Home() {
                 description: "Complete home automation systems with app control, voice integration, and custom programming. From automated blinds to smart lighting scenes."
               },
               {
+                icon: "🏨",
+                title: "Vacation Rental Automation",
+                description: "Smart locks for easy check-ins, automated guest systems, and remote monitoring solutions perfect for Hawaii vacation rentals."
+              },
+              {
                 icon: "🏊",
                 title: "Pool & Spa Automation",
                 description: "Smart pH monitoring, automated chemical systems, and app-controlled pool equipment. Monitor your pool from anywhere on the island."
@@ -69,11 +71,6 @@ export default function Home() {
                 icon: "🌡️",
                 title: "Sauna & Spa Maintenance",
                 description: "The only specialist on Big Island for sauna repairs and smart spa systems. Others fly in from other islands - we're here when you need us."
-              },
-              {
-                icon: "🚪",
-                title: "Automated Door Systems",
-                description: "Gate operators, automatic door hardware, and smart entry systems. From residential gates to commercial automatic doors."
               },
               {
                 icon: "💡",
@@ -162,7 +159,7 @@ export default function Home() {
               </h3>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  I'm Joshua, bringing advanced technology expertise to Hawaii's vacation rental and luxury properties. 
+                  I&apos;m Joshua, bringing advanced technology expertise to Hawaii&apos;s vacation rental and luxury properties. 
                   With extensive experience in complex systems and smart home integration, 
                   I deliver professional solutions that enhance property value and guest experiences.
                 </p>
@@ -272,9 +269,9 @@ export default function Home() {
               style={{
                 visibility: 'visible', 
                 width: '100%', 
-                height: '1550px', 
+                height: '1600px', 
                 border: 'none',
-                minHeight: '1500px'
+                minHeight: '1600px'
               }} 
               title="Request Form"
             />

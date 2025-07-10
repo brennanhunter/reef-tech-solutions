@@ -114,8 +114,8 @@ export default function Footer() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6 bg-gray-700 rounded-xl">
               <div className="text-3xl mb-3">🏝️</div>
-              <h5 className="text-lime-400 font-semibold mb-2">Island's Only Sauna Specialist</h5>
-              <p className="text-gray-300 text-sm">Others fly in from other islands - we're here when you need us</p>
+              <h5 className="text-lime-400 font-semibold mb-2">Island&apos;s Only Sauna Specialist</h5>
+              <p className="text-gray-300 text-sm">Others fly in from other islands - we&apos;re here when you need us</p>
             </div>
             <div className="text-center p-6 bg-gray-700 rounded-xl">
               <div className="text-3xl mb-3">🔧</div>

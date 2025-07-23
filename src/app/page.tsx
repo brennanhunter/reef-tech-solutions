@@ -1,91 +1,9 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Home() {
-  const [videoEnded, setVideoEnded] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [showText, setShowText] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleVideoEnd = () => {
-    setVideoEnded(true);
-    setTimeout(() => {
-      setShowOverlay(true);
-      // Delay text appearance by 1 second after overlay shows
-      setTimeout(() => {
-        setShowText(true);
-      }, 1000);
-    }, 500);
-  };
-
-  const handleVideoLoad = () => {
-    setVideoLoaded(true);
-    console.log('Video loaded successfully');
-  };
-
-  // Simple fallback - show overlay after 8 seconds regardless
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!showOverlay) {
-        console.log('Showing overlay after timeout');
-        setShowOverlay(true);
-        // Also trigger text after additional delay
-        setTimeout(() => {
-          setShowText(true);
-        }, 1000);
-      }
-    }, 8000); // Changed from 5000 to 8000 (8 seconds)
-
-    return () => clearTimeout(timer);
-  }, [showOverlay]);
-
-  // Try to play video when loaded
-  useEffect(() => {
-    if (videoRef.current) {
-      const video = videoRef.current;
-      
-      const attemptPlay = async () => {
-        try {
-          await video.play();
-          console.log('Video started playing');
-        } catch (error) {
-          console.log('Autoplay blocked, showing overlay immediately:', error);
-          setShowOverlay(true);
-          setTimeout(() => {
-            setShowText(true);
-          }, 1000);
-        }
-      };
-
-      video.addEventListener('loadeddata', attemptPlay);
-      
-      // Fallback: if video doesn't load, show overlay
-      video.addEventListener('error', () => {
-        console.log('Video error, showing overlay');
-        setShowOverlay(true);
-        setTimeout(() => {
-          setShowText(true);
-        }, 1000);
-      });
-
-      return () => {
-        video.removeEventListener('loadeddata', attemptPlay);
-        video.removeEventListener('error', () => setShowOverlay(true));
-      };
-    }
-  }, []);
-
-  // Handle click to play video manually
-  const handlePlayClick = () => {
-    if (videoRef.current) {
-      videoRef.current.play().then(() => {
-        setShowOverlay(false); // Hide overlay when video starts
-      }).catch(console.error);
-    }
-  };
 
   return (
     <>
@@ -201,42 +119,15 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with Video Background */}
+      {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden pt-20">
-        {/* Video Background Container - Desktop Only */}
-        <div className="hidden sm:block absolute inset-0 z-10">
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            preload="auto"
-            onEnded={handleVideoEnd}
-            onLoadedData={handleVideoLoad}
-            className="w-full h-full object-cover"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              minWidth: '100%',
-              minHeight: '100%',
-              width: 'auto',
-              height: 'auto',
-              transform: 'translate(-50%, -50%)',
-              zIndex: -1
-            }}
-          >
-            <source src="/videos/hero-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        {/* Mobile Static Background */}
-        <div className="sm:hidden absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-teal-900 z-10">
-          {/* Enhanced Mobile Circuit Pattern */}
+        {/* Beautiful Static Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-teal-900 z-10">
+          {/* Enhanced Circuit Pattern */}
           <div className="absolute inset-0 opacity-20">
             <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
               <defs>
-                <pattern id="mobile-hero-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <pattern id="hero-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
                   <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.8" opacity="0.8"/>
                   <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.6" opacity="0.7"/>
                   <circle cx="10" cy="10" r="1.2" fill="#00CED1" opacity="0.9">
@@ -250,11 +141,11 @@ export default function Home() {
                   </circle>
                 </pattern>
               </defs>
-              <rect width="100" height="100" fill="url(#mobile-hero-circuit)"/>
+              <rect width="100" height="100" fill="url(#hero-circuit)"/>
             </svg>
           </div>
           
-          {/* Mobile floating elements */}
+          {/* Floating elements */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-8 w-3 h-3 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
             <div className="absolute top-1/3 right-12 w-2 h-2 bg-lime-400 rounded-full animate-ping opacity-50" style={{ animationDelay: '0.5s' }}></div>
@@ -265,64 +156,11 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Fallback background gradient (shows if video fails to load) */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-teal-600 z-0"></div>
-        
-        {/* Dark overlay for better text readability */}
-        <div className={`absolute inset-0 transition-opacity duration-1000 z-20 ${videoEnded ? 'bg-black/40' : 'bg-black/20'}`}></div>
-        
-        {/* Content Overlay - Hidden until video ends */}
-        <div className={`absolute inset-0 flex items-center justify-center px-4 py-8 transition-all duration-1000 z-30 ${
-          showOverlay ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          {/* Enhanced Circuit Board Background Pattern */}
-          <div className="absolute inset-0 opacity-15">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <pattern id="circuit" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
-                  {/* Main circuit lines */}
-                  <path d="M12.5,0 L12.5,12.5 M0,12.5 L25,12.5 M6,6 L19,6 M12.5,3 L12.5,9" stroke="#00CED1" strokeWidth="0.8" opacity="0.7"/>
-                  <path d="M6,0 L6,6 M19,6 L19,12.5 M3,9 L9,9 M16,9 L22,9" stroke="#32CD32" strokeWidth="0.6" opacity="0.6"/>
-                  
-                  {/* Circuit nodes */}
-                  <circle cx="12.5" cy="12.5" r="1.5" fill="#00CED1" opacity="0.9">
-                    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="3s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="6" cy="6" r="1" fill="#32CD32" opacity="0.8">
-                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="19" cy="6" r="1" fill="#32CD32" opacity="0.8">
-                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="3" cy="9" r="0.7" fill="#00CED1" opacity="0.7">
-                    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.8s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="22" cy="9" r="0.7" fill="#00CED1" opacity="0.7">
-                    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite"/>
-                  </circle>
-                  
-                  {/* Microchip rectangles */}
-                  <rect x="10" y="10" width="5" height="3" fill="none" stroke="#32CD32" strokeWidth="0.4" opacity="0.5"/>
-                  <rect x="2" y="2" width="3" height="2" fill="none" stroke="#00CED1" strokeWidth="0.4" opacity="0.5"/>
-                </pattern>
-
-                {/* Animated current flow effect */}
-                <pattern id="flow" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-                  <circle r="1" fill="#32CD32" opacity="0.6">
-                    <animateMotion dur="4s" repeatCount="indefinite" path="M0,25 L50,25"/>
-                    <animate attributeName="opacity" values="0;0.8;0" dur="4s" repeatCount="indefinite"/>
-                  </circle>
-                </pattern>
-              </defs>
-              
-              <rect width="100" height="100" fill="url(#circuit)"/>
-              <rect width="100" height="100" fill="url(#flow)" opacity="0.3"/>
-            </svg>
-          </div>
-
+        {/* Content */}
+        <div className="absolute inset-0 flex items-center justify-center px-4 py-8 z-30">
           <div className="container mx-auto px-4 text-center text-white relative z-10">
-            {/* Staggered content animation */}
-            <div className={`transition-all duration-1000 ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Content */}
+            <div className="transition-all duration-1000">
               <div className="mb-8 sm:mb-12">
                 {/* Much Bigger Animated Logo */}
                 <div className="flex items-center justify-center mb-8 sm:mb-12">
@@ -403,28 +241,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-        {/* Loading indicator */}
-        {!videoEnded && !showOverlay && (
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm opacity-70 z-40">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              <span>
-                {videoLoaded ? 'Playing video...' : 'Loading video...'}
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* Play button for manual video start */}
-        {showOverlay && !videoEnded && videoLoaded && (
-          <button
-            onClick={handlePlayClick}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm transition-all duration-300 z-40"
-          >
-            ▶ Play Video
-          </button>
-        )}
       </section>
 
       {/* Services Section */}

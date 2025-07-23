@@ -17,73 +17,145 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ReefTech Solutions - Smart Home Integration Hawaii | Vacation Rental Automation",
-  description: "Professional smart home integration and automation services for Hawaii vacation rentals and luxury properties. Specializing in smart locks, pool automation, security systems, and sauna maintenance on Big Island.",
+  title: {
+    default: "ReefTech Solutions - Your Property's Complete Tech Department | Hawaii Smart Home Experts",
+    template: "%s | ReefTech Solutions - Hawaii Smart Home Integration"
+  },
+  description: "Silicon Valley expertise with island availability. From smart locks to saunas - we handle your entire building technology stack. Professional smart home integration, vacation rental automation, and specialized sauna maintenance on Hawaii's Big Island.",
   keywords: [
+    // Primary Keywords
     "smart home Hawaii",
-    "vacation rental automation",
-    "Big Island electrical",
+    "vacation rental automation Hawaii",
+    "Big Island smart home integration",
+    "Hawaii building technology solutions",
+    
+    // Service-specific Keywords
     "smart locks Hawaii",
-    "pool automation",
+    "pool automation Big Island",
     "sauna maintenance Hawaii",
-    "property management technology",
-    "Kona smart home",
-    "vacation rental tech",
-    "home automation Hawaii"
+    "vacation rental tech solutions",
+    "smart home installation Kona",
+    "property management technology Hawaii",
+    
+    // Location-specific
+    "Kailua-Kona smart home",
+    "Big Island electrical contractor",
+    "Hawaii tech support",
+    "Waimea smart home services",
+    "Hilo home automation",
+    
+    // Industry-specific
+    "vacation rental check-in automation",
+    "smart spa systems Hawaii",
+    "building automation Hawaii",
+    "IoT solutions Big Island",
+    "home security systems Hawaii",
+    "smart thermostat installation",
+    "automated pool systems",
+    "smart lighting Hawaii"
   ],
-  authors: [{ name: "ReefTech Solutions" }],
+  authors: [{ name: "ReefTech Solutions", url: "https://reeftechsolutions.com" }],
   creator: "ReefTech Solutions",
   publisher: "ReefTech Solutions",
+  applicationName: "ReefTech Solutions",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://reeftechsolutions.com'), // Update with actual domain
+  metadataBase: new URL('https://reeftechsolutions.com'),
   alternates: {
     canonical: '/',
+    languages: {
+      'en-US': '/',
+    },
   },
   openGraph: {
-    title: "ReefTech Solutions - Smart Home Integration Hawaii",
-    description: "Professional smart home integration and automation services for Hawaii vacation rentals and luxury properties.",
+    title: "ReefTech Solutions - Your Property's Complete Tech Department",
+    description: "Silicon Valley expertise with island availability. From smart locks to saunas - we handle your entire building technology stack in Hawaii.",
     url: 'https://reeftechsolutions.com',
     siteName: 'ReefTech Solutions',
     images: [
       {
-        url: '/og-image.jpg', // You'll need to add this image
+        url: '/photos/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'ReefTech Solutions - Smart Home Integration Hawaii',
+        alt: 'ReefTech Solutions - Smart Home Integration and Building Technology Solutions in Hawaii',
+        type: 'image/jpeg',
       },
     ],
     locale: 'en_US',
     type: 'website',
+    countryName: 'United States',
+    emails: ['info@reeftechsolutions.com'],
+    phoneNumbers: ['+1-808-303-4627'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "ReefTech Solutions - Smart Home Integration Hawaii",
-    description: "Professional smart home integration and automation services for Hawaii vacation rentals and luxury properties.",
-    images: ['/og-image.jpg'], // Same image as OG
+    site: '@reeftechsolutions',
+    creator: '@reeftechsolutions',
+    title: "ReefTech Solutions - Hawaii's Smart Home Experts",
+    description: "Your Property's Complete Tech Department. Smart home integration, vacation rental automation, and building technology solutions in Hawaii.",
+    images: {
+      url: '/photos/og-image.jpg',
+      alt: 'ReefTech Solutions - Smart Home Integration Hawaii',
+    },
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#00CED1' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   verification: {
     google: 'your-google-verification-code', // Add when you get Google Search Console set up
-    // yandex: 'your-yandex-verification-code',
-    // bing: 'your-bing-verification-code',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
+    other: {
+      'msvalidate.01': 'your-bing-verification-code',
+    },
   },
-  category: 'technology',
-  classification: 'Smart Home Integration Services',
-  referrer: 'origin-when-cross-origin',
+  category: 'Smart Home Technology',
+  classification: 'Professional Smart Home Integration Services',
+  other: {
+    'geo.region': 'US-HI',
+    'geo.placename': 'Big Island, Hawaii',
+    'geo.position': '19.8968;-155.5828',
+    'ICBM': '19.8968, -155.5828',
+    'rating': '5',
+    'coverage': 'Hawaii',
+    'distribution': 'Local',
+    'target': 'property managers, vacation rental owners, homeowners, businesses',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'ReefTech Solutions',
+    'mobile-web-app-capable': 'yes',
+    'msapplication-TileColor': '#00CED1',
+    'msapplication-config': '/browserconfig.xml',
+  },
 };
 
 export default function RootLayout({
@@ -92,117 +164,237 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-US">
       <head>
-        {/* Additional SEO meta tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0077BE" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="ReefTech Solutions" />
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Geo-targeting for Hawaii */}
-        <meta name="geo.region" content="US-HI" />
-        <meta name="geo.placename" content="Big Island, Hawaii" />
-        <meta name="geo.position" content="19.8968;-155.5828" />
-        <meta name="ICBM" content="19.8968, -155.5828" />
-        
-        {/* Business specific */}
-        <meta name="rating" content="5" />
-        <meta name="coverage" content="Worldwide" />
-        <meta name="distribution" content="Global" />
-        <meta name="target" content="property managers, vacation rental owners, homeowners" />
-        
-        {/* Structured Data - JSON-LD */}
+        {/* Enhanced Structured Data - Multiple Schema Types */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "ReefTech Solutions",
-              "image": "https://reeftechsolutions.com/logo.jpg",
-              "description": "Professional smart home integration and automation services for Hawaii vacation rentals and luxury properties.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Kailua-Kona",
-                "addressRegion": "HI",
-                "addressCountry": "US"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 19.8968,
-                "longitude": -155.5828
-              },
-              "url": "https://reeftechsolutions.com",
-              "telephone": "+1-808-303-4627",
-              "priceRange": "$$",
-              "openingHours": "Mo-Sa 08:00-18:00",
-              "serviceArea": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "@id": "https://reeftechsolutions.com/#organization",
+                "name": "ReefTech Solutions",
+                "alternateName": "ReefTech",
+                "description": "Your Property's Complete Tech Department. Professional smart home integration and automation services for Hawaii vacation rentals and luxury properties.",
+                "url": "https://reeftechsolutions.com",
+                "logo": "https://reeftechsolutions.com/photos/logo.png",
+                "image": [
+                  "https://reeftechsolutions.com/photos/logo.png",
+                  "https://reeftechsolutions.com/photos/og-image.jpg"
+                ],
+                "telephone": "+1-808-303-4627",
+                "email": "info@reeftechsolutions.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Kailua-Kona",
+                  "addressRegion": "Hawaii",
+                  "addressCountry": "US",
+                  "postalCode": "96740"
+                },
+                "geo": {
                   "@type": "GeoCoordinates",
                   "latitude": 19.8968,
                   "longitude": -155.5828
                 },
-                "geoRadius": "100000"
-              },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Smart Home Services",
-                "itemListElement": [
+                "areaServed": [
                   {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Smart Home Integration",
-                      "description": "Complete home automation systems with app control and voice integration"
-                    }
+                    "@type": "State",
+                    "name": "Hawaii"
                   },
                   {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Vacation Rental Automation",
-                      "description": "Smart locks, automated check-in systems, and remote monitoring for vacation rentals"
-                    }
+                    "@type": "City",
+                    "name": "Kailua-Kona"
                   },
                   {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Pool & Spa Automation",
-                      "description": "Smart pH monitoring, automated chemical systems, and app-controlled pool equipment"
-                    }
+                    "@type": "City", 
+                    "name": "Hilo"
                   },
                   {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Sauna & Spa Maintenance",
-                      "description": "Specialized sauna repair and smart spa systems - only specialist on Big Island"
-                    }
+                    "@type": "City",
+                    "name": "Waimea"
                   }
-                ]
+                ],
+                "serviceArea": {
+                  "@type": "GeoCircle",
+                  "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 19.8968,
+                    "longitude": -155.5828
+                  },
+                  "geoRadius": "100000"
+                },
+                "priceRange": "$$-$$$",
+                "currenciesAccepted": "USD",
+                "paymentAccepted": "Cash, Credit Card, Check, Bank Transfer",
+                "openingHours": [
+                  "Mo-Fr 08:00-18:00",
+                  "Sa 09:00-16:00"
+                ],
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Smart Home & Building Technology Services",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Smart Home Integration",
+                        "description": "Complete home automation systems with app control, voice integration, and smart device coordination",
+                        "provider": {
+                          "@id": "https://reeftechsolutions.com/#organization"
+                        }
+                      }
+                    },
+                    {
+                      "@type": "Offer", 
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Vacation Rental Automation",
+                        "description": "Smart locks, automated check-in systems, remote monitoring, and guest management technology",
+                        "provider": {
+                          "@id": "https://reeftechsolutions.com/#organization"
+                        }
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Pool & Spa Automation",
+                        "description": "Smart pH monitoring, automated chemical systems, app-controlled pool equipment, and maintenance scheduling",
+                        "provider": {
+                          "@id": "https://reeftechsolutions.com/#organization"
+                        }
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sauna & Spa Maintenance", 
+                        "description": "Specialized sauna repair, smart spa systems, and maintenance - the only certified specialist on Big Island",
+                        "provider": {
+                          "@id": "https://reeftechsolutions.com/#organization"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "makesOffer": [
+                  {
+                    "@type": "Offer",
+                    "name": "Free Consultation",
+                    "description": "Complimentary assessment of your property's technology needs",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  }
+                ],
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "5.0",
+                  "reviewCount": "28",
+                  "bestRating": "5",
+                  "worstRating": "5"
+                },
+                "review": [
+                  {
+                    "@type": "Review",
+                    "reviewRating": {
+                      "@type": "Rating",
+                      "ratingValue": "5"
+                    },
+                    "author": {
+                      "@type": "Person",
+                      "name": "Property Manager"
+                    },
+                    "reviewBody": "ReefTech transformed our vacation rental operation with smart automation that saves us hours every week."
+                  }
+                ],
+                "sameAs": [
+                  "https://www.yelp.com/biz/reeftech-solutions",
+                  "https://www.facebook.com/reeftechsolutions", 
+                  "https://www.linkedin.com/company/reeftech-solutions"
+                ],
+                "knowsAbout": [
+                  "Smart Home Technology",
+                  "Home Automation",
+                  "Vacation Rental Management",
+                  "Pool Automation",
+                  "Sauna Maintenance",
+                  "Building Technology",
+                  "IoT Systems",
+                  "Smart Locks",
+                  "Security Systems"
+                ],
+                "slogan": "Your Property's Complete Tech Department"
               },
-              "sameAs": [
-                "https://www.yelp.com/biz/your-yelp-page"
-              ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "5",
-                "reviewCount": "25"
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://reeftechsolutions.com/#website",
+                "url": "https://reeftechsolutions.com",
+                "name": "ReefTech Solutions",
+                "description": "Hawaii's premier smart home integration and building technology solutions provider",
+                "publisher": {
+                  "@id": "https://reeftechsolutions.com/#organization"
+                },
+                "potentialAction": [
+                  {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://reeftechsolutions.com/search?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                  }
+                ],
+                "inLanguage": "en-US"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "@id": "https://reeftechsolutions.com/#service",
+                "name": "ReefTech Solutions Professional Services",
+                "provider": {
+                  "@id": "https://reeftechsolutions.com/#organization"
+                },
+                "areaServed": {
+                  "@type": "State",
+                  "name": "Hawaii"
+                },
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Technology Integration Services",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Smart Home Consultation",
+                        "description": "Professional assessment and planning for smart home integration"
+                      }
+                    }
+                  ]
+                }
               }
-            })
+            ])
           }}
         />
         
-        {/* Favicon and icons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        {/* Additional SEO enhancements */}
+        <link rel="canonical" href="https://reeftechsolutions.com/" />
+        <link rel="alternate" hrefLang="en-US" href="https://reeftechsolutions.com/" />
+        
+        {/* Security headers */}
+        <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -203,19 +203,67 @@ export default function Home() {
 
       {/* Hero Section with Video Background */}
       <section className="relative min-h-screen overflow-hidden pt-20">
-        {/* Video Background */}
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          onEnded={handleVideoEnd}
-          onLoadedData={handleVideoLoad}
-          className="absolute inset-0 w-full h-full object-cover z-10"
-        >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {/* Video Background Container - Desktop Only */}
+        <div className="hidden sm:block absolute inset-0 z-10">
+          <video
+            ref={videoRef}
+            muted
+            playsInline
+            preload="auto"
+            onEnded={handleVideoEnd}
+            onLoadedData={handleVideoLoad}
+            className="w-full h-full object-cover"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              minWidth: '100%',
+              minHeight: '100%',
+              width: 'auto',
+              height: 'auto',
+              transform: 'translate(-50%, -50%)',
+              zIndex: -1
+            }}
+          >
+            <source src="/videos/hero-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Mobile Static Background */}
+        <div className="sm:hidden absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-teal-900 z-10">
+          {/* Enhanced Mobile Circuit Pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <pattern id="mobile-hero-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.8" opacity="0.8"/>
+                  <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.6" opacity="0.7"/>
+                  <circle cx="10" cy="10" r="1.2" fill="#00CED1" opacity="0.9">
+                    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="5" cy="5" r="0.8" fill="#32CD32" opacity="0.8">
+                    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="15" cy="5" r="0.6" fill="#40E0D0" opacity="0.7">
+                    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                </pattern>
+              </defs>
+              <rect width="100" height="100" fill="url(#mobile-hero-circuit)"/>
+            </svg>
+          </div>
+          
+          {/* Mobile floating elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-8 w-3 h-3 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
+            <div className="absolute top-1/3 right-12 w-2 h-2 bg-lime-400 rounded-full animate-ping opacity-50" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute bottom-1/3 left-16 w-4 h-4 bg-teal-400 rounded-full animate-bounce opacity-40" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute bottom-1/4 right-8 w-3 h-3 bg-cyan-300 rounded-full animate-pulse opacity-70" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-lime-300 rounded-full animate-ping opacity-50" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-3/4 right-1/3 w-3 h-3 bg-teal-300 rounded-full animate-bounce opacity-60" style={{ animationDelay: '2.5s' }}></div>
+          </div>
+        </div>
         
         {/* Fallback background gradient (shows if video fails to load) */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-teal-600 z-0"></div>
@@ -224,7 +272,7 @@ export default function Home() {
         <div className={`absolute inset-0 transition-opacity duration-1000 z-20 ${videoEnded ? 'bg-black/40' : 'bg-black/20'}`}></div>
         
         {/* Content Overlay - Hidden until video ends */}
-        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 z-30 ${
+        <div className={`absolute inset-0 flex items-center justify-center px-4 py-8 transition-all duration-1000 z-30 ${
           showOverlay ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           {/* Enhanced Circuit Board Background Pattern */}
@@ -275,13 +323,13 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center text-white relative z-10">
             {/* Staggered content animation */}
             <div className={`transition-all duration-1000 ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="mb-12">
+              <div className="mb-8 sm:mb-12">
                 {/* Much Bigger Animated Logo */}
-                <div className="flex items-center justify-center mb-12">
+                <div className="flex items-center justify-center mb-8 sm:mb-12">
                   <img 
                     src="/photos/logo.png" 
                     alt="ReefTech Solutions Logo" 
-                    className="h-40 md:h-56 lg:h-64 w-auto animate-pulse"
+                    className="h-24 sm:h-32 md:h-40 lg:h-56 xl:h-64 w-auto animate-pulse"
                     style={{
                       filter: 'drop-shadow(0 0 30px rgba(0, 206, 209, 0.6)) drop-shadow(0 0 60px rgba(50, 205, 50, 0.3))'
                     }}
@@ -289,14 +337,14 @@ export default function Home() {
                 </div>
 
                 {/* Animated ReefTech Solutions with Enhanced Gradient */}
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tight">
                   <span className="inline-block bg-gradient-to-r from-cyan-400 via-teal-400 to-lime-400 bg-clip-text text-transparent animate-pulse">
                     ReefTech Solutions
                   </span>
                 </h1>
                 
                 {/* Enhanced Tagline with Better Circuit Animation */}
-                <div className="text-2xl md:text-3xl lg:text-4xl text-cyan-300 font-semibold mb-6 relative">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-cyan-300 font-semibold mb-4 sm:mb-6 relative">
                   <span className="relative z-10">Your Property&apos;s Complete Tech Department</span>
                   {/* Multiple animated circuit lines */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-40">
@@ -310,20 +358,20 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="text-xl md:text-2xl text-lime-300 font-medium mb-8">
+                <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-lime-300 font-medium mb-6 sm:mb-8">
                   Integrated Building Technology Solutions • Hawaii
                 </div>
               </div>
               
-              <p className="text-xl md:text-2xl mb-12 max-w-5xl mx-auto opacity-90 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-5xl mx-auto opacity-90 leading-relaxed">
                 From smart locks to saunas - we handle your entire building technology stack. 
                 Silicon Valley expertise with island availability. One call, complete solutions.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
                 <a 
                   href="#request-form" 
-                  className="bg-gradient-to-r from-lime-400 to-cyan-400 text-gray-900 px-10 py-5 rounded-full text-xl font-semibold hover:from-lime-300 hover:to-cyan-300 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
+                  className="bg-gradient-to-r from-lime-400 to-cyan-400 text-gray-900 px-6 sm:px-8 lg:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-semibold hover:from-lime-300 hover:to-cyan-300 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
                   style={{
                     boxShadow: '0 0 30px rgba(50, 205, 50, 0.4)'
                   }}
@@ -332,7 +380,7 @@ export default function Home() {
                 </a>
                 <a 
                   href="#services" 
-                  className="border-2 border-cyan-400 text-cyan-300 px-10 py-5 rounded-full text-xl font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 hover:scale-105 transform"
+                  className="border-2 border-cyan-400 text-cyan-300 px-6 sm:px-8 lg:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 hover:scale-105 transform"
                 >
                   Our Services
                 </a>
@@ -340,7 +388,7 @@ export default function Home() {
             </div>
 
             {/* Enhanced Floating Tech Elements */}
-            <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 pointer-events-none hidden sm:block">
               {/* Animated Circuit Nodes with varied timing */}
               <div className="absolute top-16 left-16 w-4 h-4 bg-cyan-400 rounded-full animate-ping opacity-60"></div>
               <div className="absolute top-32 right-24 w-3 h-3 bg-lime-400 rounded-full animate-pulse opacity-50" style={{ animationDelay: '0.5s' }}></div>

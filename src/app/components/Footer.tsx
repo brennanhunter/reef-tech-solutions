@@ -1,3 +1,5 @@
+import { Facebook, Instagram } from 'lucide-react'
+
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white">
@@ -94,6 +96,32 @@ export default function Footer() {
                   className="hover:text-lime-400 transition-colors duration-300 block"
                 >
                   💻 Request Online Quote
+                </a>
+              </p>
+              <p>
+                <a 
+                  href="https://www.facebook.com/reeftechsolutions" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-lime-400 transition-colors duration-300 flex items-center gap-2"
+                >
+                  <div className="bg-blue-600 p-1.5 rounded-md">
+                    <Facebook className="w-4 h-4 text-white" />
+                  </div>
+                  Follow on Facebook
+                </a>
+              </p>
+              <p>
+                <a 
+                  href="https://www.instagram.com/reeftechsolutions/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-lime-400 transition-colors duration-300 flex items-center gap-2"
+                >
+                  <div className="bg-gradient-to-r from-pink-500 to-purple-600 p-1.5 rounded-md">
+                    <Instagram className="w-4 h-4 text-white" />
+                  </div>
+                  Follow on Instagram
                 </a>
               </p>
               <div className="pt-4 space-y-2">

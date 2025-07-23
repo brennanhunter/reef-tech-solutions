@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Facebook, Instagram } from 'lucide-react';
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function Home() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-6">
               <a href="#services" className="text-gray-700 hover:text-cyan-600 font-medium transition-colors duration-300">
                 Services
               </a>
@@ -45,6 +46,43 @@ export default function Home() {
               <a href="#resources" className="text-gray-700 hover:text-cyan-600 font-medium transition-colors duration-300">
                 Resources
               </a>
+              
+              {/* Call Now Button */}
+              <a 
+                href="tel:+1-808-303-4627" 
+                className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2"
+                style={{
+                  boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)'
+                }}
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                Call Now
+              </a>
+              
+              {/* Facebook Icon */}
+              <a 
+                href="https://www.facebook.com/reeftechsolutions" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-blue-600 p-2 transition-all duration-300"
+                title="Follow us on Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              
+              {/* Instagram Icon */}
+              <a 
+                href="https://www.instagram.com/reeftechsolutions/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-pink-600 p-2 transition-all duration-300"
+                title="Follow us on Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              
               <a 
                 href="#request-form" 
                 className="bg-gradient-to-r from-lime-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:from-lime-400 hover:to-cyan-400 transition-all duration-300 hover:scale-105 shadow-lg"
@@ -103,6 +141,46 @@ export default function Home() {
                 >
                   Resources
                 </a>
+                
+                {/* Call Now Button Mobile */}
+                <a 
+                  href="tel:+1-808-303-4627" 
+                  className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-center shadow-lg flex items-center justify-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                  style={{
+                    boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)'
+                  }}
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  </svg>
+                  Call Now: (808) 303-4627
+                </a>
+                
+                {/* Facebook Link Mobile */}
+                <a 
+                  href="https://www.facebook.com/reeftechsolutions" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center shadow-md flex items-center justify-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Facebook className="w-5 h-5" />
+                  Follow on Facebook
+                </a>
+                
+                {/* Instagram Link Mobile */}
+                <a 
+                  href="https://www.instagram.com/reeftechsolutions/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center shadow-md flex items-center justify-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Instagram className="w-5 h-5" />
+                  Follow on Instagram
+                </a>
+                
                 <a 
                   href="#request-form" 
                   className="bg-gradient-to-r from-lime-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:from-lime-400 hover:to-cyan-400 transition-all duration-300 text-center shadow-lg"
@@ -645,6 +723,56 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-lime-400 to-cyan-500 rounded-full flex items-center justify-center text-white text-xl animate-pulse">
                 🔧
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Call-to-Action Section */}
+      <section className="py-16 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Smart Home Emergency? We're Here 24/7
+            </h2>
+            <p className="text-xl mb-8 text-green-100">
+              While others fly in from other islands, we're already here. Big Island's only certified sauna specialist and smart home expert.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="tel:+1-808-303-4627" 
+                className="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-3"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                Call Emergency Line: (808) 303-4627
+              </a>
+              
+              <div className="text-green-100 text-sm">
+                <p className="font-semibold">✓ $5-10M Insurance Coverage</p>
+                <p>✓ Same-Day Service Available</p>
+              </div>
+            </div>
+            
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl mb-2">🔧</div>
+                <h4 className="font-semibold mb-1">Sauna Repairs</h4>
+                <p className="text-sm text-green-200">Island's only specialist</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl mb-2">🏠</div>
+                <h4 className="font-semibold mb-1">Smart Home Issues</h4>
+                <p className="text-sm text-green-200">System down? We fix it fast</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl mb-2">🏊</div>
+                <h4 className="font-semibold mb-1">Pool Automation</h4>
+                <p className="text-sm text-green-200">Remote monitoring setup</p>
               </div>
             </div>
           </div>

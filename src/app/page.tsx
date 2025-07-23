@@ -735,10 +735,10 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Smart Home Emergency? We're Here 24/7
+              Smart Home Emergency? We&apos;re Here 24/7
             </h2>
             <p className="text-xl mb-8 text-green-100">
-              While others fly in from other islands, we're already here. Big Island's only certified sauna specialist and smart home expert.
+              While others fly in from other islands, we&apos;re already here. Big Island&apos;s only certified sauna specialist and smart home expert.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -762,7 +762,7 @@ export default function Home() {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl mb-2">🔧</div>
                 <h4 className="font-semibold mb-1">Sauna Repairs</h4>
-                <p className="text-sm text-green-200">Island's only specialist</p>
+                <p className="text-sm text-green-200">Island&apos;s only specialist</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl mb-2">🏠</div>

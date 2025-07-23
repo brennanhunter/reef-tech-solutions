@@ -1,5 +1,5 @@
 # Robots.txt for ReefTech Solutions
-# https://reeftechsolutions.com/robots.txt
+# https://reeftech.io/robots.txt
 
 User-agent: *
 Allow: /
@@ -9,7 +9,7 @@ Disallow: /admin/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://reeftechsolutions.com/sitemap.xml
+Sitemap: https://reeftech.io/sitemap.xml
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1

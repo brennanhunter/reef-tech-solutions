@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://reeftechsolutions.com'),
+  metadataBase: new URL('https://reeftech.io'),
   alternates: {
     canonical: '/',
     languages: {
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ReefTech Solutions - Your Property's Complete Tech Department",
     description: "Silicon Valley expertise with island availability. From smart locks to saunas - we handle your entire building technology stack in Hawaii.",
-    url: 'https://reeftechsolutions.com',
+    url: 'https://reeftech.io',
     siteName: 'ReefTech Solutions',
     images: [
       {
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
     countryName: 'United States',
-    emails: ['info@reeftechsolutions.com'],
+    emails: ['info@reeftech.io'],
     phoneNumbers: ['+1-808-303-4627'],
   },
   twitter: {
@@ -180,18 +180,18 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "@id": "https://reeftechsolutions.com/#organization",
+                "@id": "https://reeftech.io/#organization",
                 "name": "ReefTech Solutions",
                 "alternateName": "ReefTech",
                 "description": "Your Property's Complete Tech Department. Professional smart home integration and automation services for Hawaii vacation rentals and luxury properties.",
-                "url": "https://reeftechsolutions.com",
-                "logo": "https://reeftechsolutions.com/photos/logo.png",
+                "url": "https://reeftech.io",
+                "logo": "https://reeftech.io/photos/logo.png",
                 "image": [
-                  "https://reeftechsolutions.com/photos/logo.png",
-                  "https://reeftechsolutions.com/photos/og-image.jpg"
+                  "https://reeftech.io/photos/logo.png",
+                  "https://reeftech.io/photos/og-image.jpg"
                 ],
                 "telephone": "+1-808-303-4627",
-                "email": "info@reeftechsolutions.com",
+                "email": "info@reeftech.io",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Kailua-Kona",
@@ -249,7 +249,7 @@ export default function RootLayout({
                         "name": "Smart Home Integration",
                         "description": "Complete home automation systems with app control, voice integration, and smart device coordination",
                         "provider": {
-                          "@id": "https://reeftechsolutions.com/#organization"
+                          "@id": "https://reeftech.io/#organization"
                         }
                       }
                     },
@@ -260,7 +260,7 @@ export default function RootLayout({
                         "name": "Vacation Rental Automation",
                         "description": "Smart locks, automated check-in systems, remote monitoring, and guest management technology",
                         "provider": {
-                          "@id": "https://reeftechsolutions.com/#organization"
+                          "@id": "https://reeftech.io/#organization"
                         }
                       }
                     },
@@ -271,7 +271,7 @@ export default function RootLayout({
                         "name": "Pool & Spa Automation",
                         "description": "Smart pH monitoring, automated chemical systems, app-controlled pool equipment, and maintenance scheduling",
                         "provider": {
-                          "@id": "https://reeftechsolutions.com/#organization"
+                          "@id": "https://reeftech.io/#organization"
                         }
                       }
                     },
@@ -282,7 +282,7 @@ export default function RootLayout({
                         "name": "Sauna & Spa Maintenance", 
                         "description": "Specialized sauna repair, smart spa systems, and maintenance - the only certified specialist on Big Island",
                         "provider": {
-                          "@id": "https://reeftechsolutions.com/#organization"
+                          "@id": "https://reeftech.io/#organization"
                         }
                       }
                     }
@@ -339,19 +339,19 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "@id": "https://reeftechsolutions.com/#website",
-                "url": "https://reeftechsolutions.com",
+                "@id": "https://reeftech.io/#website",
+                "url": "https://reeftech.io",
                 "name": "ReefTech Solutions",
                 "description": "Hawaii's premier smart home integration and building technology solutions provider",
                 "publisher": {
-                  "@id": "https://reeftechsolutions.com/#organization"
+                  "@id": "https://reeftech.io/#organization"
                 },
                 "potentialAction": [
                   {
                     "@type": "SearchAction",
                     "target": {
                       "@type": "EntryPoint",
-                      "urlTemplate": "https://reeftechsolutions.com/search?q={search_term_string}"
+                      "urlTemplate": "https://reeftech.io/search?q={search_term_string}"
                     },
                     "query-input": "required name=search_term_string"
                   }
@@ -361,10 +361,10 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
-                "@id": "https://reeftechsolutions.com/#service",
+                "@id": "https://reeftech.io/#service",
                 "name": "ReefTech Solutions Professional Services",
                 "provider": {
-                  "@id": "https://reeftechsolutions.com/#organization"
+                  "@id": "https://reeftech.io/#organization"
                 },
                 "areaServed": {
                   "@type": "State",
@@ -390,8 +390,8 @@ export default function RootLayout({
         />
         
         {/* Additional SEO enhancements */}
-        <link rel="canonical" href="https://reeftechsolutions.com/" />
-        <link rel="alternate" hrefLang="en-US" href="https://reeftechsolutions.com/" />
+        <link rel="canonical" href="https://reeftech.io/" />
+        <link rel="alternate" hrefLang="en-US" href="https://reeftech.io/" />
         
         {/* Security headers */}
         <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />

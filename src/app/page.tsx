@@ -862,62 +862,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Expertise Areas */}
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div>
-              <h3 className="text-4xl font-bold mb-8">
-                <span className="bg-gradient-to-r from-lime-400 to-cyan-400 bg-clip-text text-transparent">
-                  Core Expertise
-                </span>
-              </h3>
-              <div className="space-y-6">
-                {[
-                  { skill: "Emergency Plumbing & Electric", level: "95%" },
-                  { skill: "Basic Property Upkeep Checklist", level: "98%" },
-                  { skill: "Mag Lock & Security Systems", level: "92%" },
-                  { skill: "Property Management Support", level: "96%" },
-                  { skill: "Sauna & Spa Maintenance", level: "94%" }
-                ].map((item, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between text-lg">
-                      <span className="font-semibold text-gray-200">{item.skill}</span>
-                      <span className="text-cyan-400">{item.level}</span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-lime-400 to-cyan-400 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: item.level }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold mb-8">
-                <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
-                  Services & Equipment
-                </span>
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  "Emergency Repairs", "Property Inspections", "Mag Lock Installation", "Basic Electrical", 
-                  "Plumbing Fixes", "Sauna Maintenance", "Security Setup", "Property Upkeep",
-                  "System Troubleshooting", "Equipment Installation", "Maintenance Checks", "Property Support"
-                ].map((service, index) => (
-                  <div 
-                    key={index}
-                    className="bg-gradient-to-br from-gray-800/50 to-slate-800/50 backdrop-blur-sm p-4 rounded-2xl border border-cyan-400/20 hover:border-lime-400/40 transition-all duration-300 text-center group"
-                  >
-                    <span className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors duration-300">
-                      {service}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          
 
           {/* Call to Action */}
           <div className="text-center mt-20">

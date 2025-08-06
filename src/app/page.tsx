@@ -198,144 +198,86 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden pt-20">
-        {/* Beautiful Static Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-teal-900 z-10">
-          {/* Enhanced Circuit Pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <pattern id="hero-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.8" opacity="0.8"/>
-                  <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.6" opacity="0.7"/>
-                  <circle cx="10" cy="10" r="1.2" fill="#00CED1" opacity="0.9">
-                    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="3s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="5" cy="5" r="0.8" fill="#32CD32" opacity="0.8">
-                    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite"/>
-                  </circle>
-                  <circle cx="15" cy="5" r="0.6" fill="#40E0D0" opacity="0.7">
-                    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/>
-                  </circle>
-                </pattern>
-              </defs>
-              <rect width="100" height="100" fill="url(#hero-circuit)"/>
-            </svg>
-          </div>
-          
-          {/* Floating elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/4 left-8 w-3 h-3 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
-            <div className="absolute top-1/3 right-12 w-2 h-2 bg-lime-400 rounded-full animate-ping opacity-50" style={{ animationDelay: '0.5s' }}></div>
-            <div className="absolute bottom-1/3 left-16 w-4 h-4 bg-teal-400 rounded-full animate-bounce opacity-40" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute bottom-1/4 right-8 w-3 h-3 bg-cyan-300 rounded-full animate-pulse opacity-70" style={{ animationDelay: '1.5s' }}></div>
-            <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-lime-300 rounded-full animate-ping opacity-50" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute top-3/4 right-1/3 w-3 h-3 bg-teal-300 rounded-full animate-bounce opacity-60" style={{ animationDelay: '2.5s' }}></div>
-          </div>
-        </div>
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Hero Video Background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
+          <source src="/videos/Hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
         
         {/* Content */}
         <div className="absolute inset-0 flex items-center justify-center px-4 py-8 z-30">
           <div className="container mx-auto px-4 text-center text-white relative z-10">
-            {/* Content */}
             <div className="transition-all duration-1000">
               <div className="mb-8 sm:mb-12">
-                {/* Much Bigger Animated Logo */}
+                {/* Logo */}
                 <div className="flex items-center justify-center mb-8 sm:mb-12">
                   <img 
                     src="/photos/logo.png" 
                     alt="ReefTech Solutions Logo" 
                     className="h-24 sm:h-32 md:h-40 lg:h-56 xl:h-64 w-auto animate-pulse"
                     style={{
-                      filter: 'drop-shadow(0 0 30px rgba(0, 206, 209, 0.6)) drop-shadow(0 0 60px rgba(50, 205, 50, 0.3))'
+                      filter: 'drop-shadow(0 0 20px rgba(0, 206, 209, 0.5))'
                     }}
                   />
                 </div>
 
-                {/* Animated ReefTech Solutions with Enhanced Gradient */}
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tight">
-                  <span className="inline-block bg-gradient-to-r from-cyan-400 via-teal-400 to-lime-400 bg-clip-text text-transparent animate-pulse">
+                {/* Main Heading */}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 sm:mb-8">
+                  <span className="bg-gradient-to-r from-cyan-300 via-teal-300 to-lime-300 bg-clip-text text-transparent drop-shadow-2xl">
                     ReefTech Solutions
                   </span>
                 </h1>
-                
-                {/* Enhanced Tagline with Better Circuit Animation */}
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-cyan-300 font-semibold mb-4 sm:mb-6 relative">
-                  <span className="relative z-10">Your Property&apos;s Complete Tech Department</span>
-                  {/* Multiple animated circuit lines */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-40">
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-30" style={{ transform: 'translateY(-8px)' }}>
-                    <div className="w-3/4 h-px bg-gradient-to-r from-transparent via-lime-400 to-transparent animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-30" style={{ transform: 'translateY(8px)' }}>
-                    <div className="w-3/4 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  </div>
-                </div>
-                
-                <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-lime-300 font-medium mb-6 sm:mb-8">
-                  Integrated Building Technology Solutions • Hawaii
-                </div>
-              </div>
-              
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-5xl mx-auto opacity-90 leading-relaxed">
-                From smart locks to saunas - we handle your entire building technology stack. 
-                Silicon Valley expertise with island availability. One call, complete solutions.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
-                <a 
-                  href="#request-form" 
-                  className="bg-gradient-to-r from-lime-400 to-cyan-400 text-gray-900 px-6 sm:px-8 lg:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-semibold hover:from-lime-300 hover:to-cyan-300 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
-                  style={{
-                    boxShadow: '0 0 30px rgba(50, 205, 50, 0.4)'
-                  }}
-                >
-                  Get Complete Solutions
-                </a>
-                <a 
-                  href="#services" 
-                  className="border-2 border-cyan-400 text-cyan-300 px-6 sm:px-8 lg:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 hover:scale-105 transform"
-                >
-                  Our Services
-                </a>
-              </div>
-            </div>
 
-            {/* Enhanced Floating Tech Elements */}
-            <div className="absolute inset-0 pointer-events-none hidden sm:block">
-              {/* Animated Circuit Nodes with varied timing */}
-              <div className="absolute top-16 left-16 w-4 h-4 bg-cyan-400 rounded-full animate-ping opacity-60"></div>
-              <div className="absolute top-32 right-24 w-3 h-3 bg-lime-400 rounded-full animate-pulse opacity-50" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute top-1/2 left-8 w-2 h-2 bg-teal-400 rounded-full animate-bounce opacity-40" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute bottom-40 left-32 w-5 h-5 bg-teal-400 rounded-full animate-bounce opacity-40" style={{ animationDelay: '1.5s' }}></div>
-              <div className="absolute bottom-24 right-16 w-3 h-3 bg-cyan-300 rounded-full animate-ping opacity-60" style={{ animationDelay: '2s' }}></div>
-              <div className="absolute top-20 right-1/3 w-2 h-2 bg-lime-300 rounded-full animate-pulse opacity-50" style={{ animationDelay: '2.5s' }}></div>
-              
-              {/* Moving circuit lines */}
-              <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-transparent to-cyan-400 opacity-30 animate-pulse"></div>
-              <div className="absolute bottom-1/3 right-0 w-24 h-px bg-gradient-to-l from-transparent to-lime-400 opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                {/* Tagline */}
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-8 sm:mb-12 text-cyan-100 leading-relaxed">
+                  Your Property&apos;s Tech Department
+                </p>
+
+                {/* Sub-description */}
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed">
+                  Complete building technology solutions - from smart homes to saunas, Big Island&apos;s only certified specialist
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                  <a 
+                    href="#request-form" 
+                    className="bg-gradient-to-r from-lime-400 to-cyan-400 text-gray-900 px-8 py-4 rounded-full text-xl font-bold hover:from-lime-300 hover:to-cyan-300 transition-all duration-300 hover:scale-105 shadow-2xl"
+                    style={{
+                      boxShadow: '0 0 30px rgba(50, 205, 50, 0.4)'
+                    }}
+                  >
+                    Get Started Today
+                  </a>
+                  <a 
+                    href="tel:+1-808-303-4627" 
+                    className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-xl transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-3"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    Call (808) 303-4627
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        {/* Subtle circuit background */}
-        <div className="absolute inset-0 opacity-5">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="services-circuit" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-                <path d="M15,0 L15,15 M0,15 L30,15" stroke="#0077BE" strokeWidth="0.3" opacity="0.4"/>
-                <circle cx="15" cy="15" r="0.8" fill="#32CD32" opacity="0.6"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#services-circuit)"/>
-          </svg>
-        </div>
-
+      <section id="services" className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-8">

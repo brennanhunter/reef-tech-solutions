@@ -314,7 +314,7 @@ export default function Home() {
               {
                 icon: "🌡️",
                 title: "Sauna & Spa Maintenance",
-                description: "The only specialist on Big Island for sauna repairs and smart spa systems. Others fly in from other islands - we're here when you need us."
+                description: "Specialist on Big Island for sauna repairs and smart spa systems. Others fly in from other islands - we're here when you need us."
               },
               {
                 icon: "💡",

@@ -245,9 +245,8 @@ export default function Home() {
                 </p>
 
                 {/* Sub-description */}
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 sm:mb-16 max-w-4xl mx-auto leading-relaxed">
-                  Complete building technology solutions - from smart homes to saunas, Big Island&apos;s only certified specialist
-                </p>
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-200 mb-8 sm:mb-12">
+                  Smart home integration, vacation rental automation, and advanced technology solutions for Hawaii&apos;s Big Island.</p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -348,86 +347,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-teal-900 text-white relative overflow-hidden">
-        {/* Enhanced circuit background */}
-        <div className="absolute inset-0 opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <pattern id="why-choose-circuit" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
-                <path d="M12.5,0 L12.5,12.5 M0,12.5 L25,12.5 M6,6 L19,6" stroke="#00CED1" strokeWidth="0.6" opacity="0.7"/>
-                <path d="M6,0 L6,6 M19,6 L19,12.5" stroke="#32CD32" strokeWidth="0.4" opacity="0.6"/>
-                <circle cx="12.5" cy="12.5" r="1" fill="#00CED1" opacity="0.8">
-                  <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="6" cy="6" r="0.7" fill="#32CD32" opacity="0.7">
-                  <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#why-choose-circuit)"/>
-          </svg>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-lime-400 bg-clip-text text-transparent">
-                Silicon Valley Expertise
-              </span>
-            </h2>
-            <h3 className="text-3xl md:text-4xl font-semibold text-cyan-300 mb-6">
-              Island Availability
-            </h3>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Why vacation rental & property managers choose ReefTech for their complete technology stack
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {[
-              {
-                emoji: "🏝️",
-                title: "Only Sauna Specialist on Big Island",
-                description: "Sauna and spa maintenance specialist - competitors have to fly someone in from other islands. We're here when you need us."
-              },
-              {
-                emoji: "🔧",
-                title: "High-End Project Experience",
-                description: "From San Francisco's tech giants to Hawaii's luxury properties - smart systems, automation, and technology integration done right."
-              },
-              {
-                emoji: "⚡",
-                title: "No Bureaucratic Delays",
-                description: "$5-10 million insurance coverage means getting work done without permit delays. We handle the liability, you get results."
-              },
-              {
-                emoji: "🎯",
-                title: "Property Manager Focused",
-                description: "We understand what property managers need: reliable technology, professional service, and solutions that work when you're not there."
-              }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="bg-gradient-to-br from-gray-800/50 to-slate-800/50 backdrop-blur-sm p-8 rounded-3xl border border-cyan-400/30 hover:border-lime-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl group relative overflow-hidden"
-              >
-                {/* Animated gradient border on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-lime-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                
-                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500 relative z-10">{item.emoji}</div>
-                <h4 className="text-2xl font-bold mb-6 relative z-10">
-                  <span className="bg-gradient-to-r from-cyan-400 to-lime-400 bg-clip-text text-transparent">
-                    {item.title}
-                  </span>
-                </h4>
-                <p className="text-gray-300 leading-relaxed text-lg relative z-10">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Featured Projects Showcase */}
       <section id="projects" className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden">
@@ -589,7 +509,7 @@ export default function Home() {
                 </p>
                 <p>
                   What sets ReefTech apart is our focus on <span className="text-lime-600 font-semibold">specialized services</span> - 
-                  from smart home automation to sauna maintenance (the only specialist on Big Island). 
+                  from smart home automation to sauna maintenance. 
                   We handle the technology challenges that give property managers peace of mind.
                 </p>
                 <p className="text-2xl font-semibold">
@@ -610,8 +530,7 @@ export default function Home() {
                   <div className="text-lg text-gray-600">Insurance</div>
                 </div>
                 <div className="bg-gradient-to-br from-teal-50 to-lime-50 p-6 rounded-2xl border border-teal-200 text-center">
-                  <div className="text-3xl font-bold text-cyan-600 mb-2">Only</div>
-                  <div className="text-lg text-gray-600">On Island</div>
+                  <div className="text-lg text-gray-600">Sauna Specialist</div>
                 </div>
               </div>
             </div>
@@ -679,9 +598,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Smart Home Emergency? We&apos;re Here 24/7
             </h2>
-            <p className="text-xl mb-8 text-green-100">
-              While others fly in from other islands, we&apos;re already here. Big Island&apos;s only certified sauna specialist and smart home expert.
-            </p>
+            
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
@@ -704,7 +621,7 @@ export default function Home() {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl mb-2">🔧</div>
                 <h4 className="font-semibold mb-1">Sauna Repairs</h4>
-                <p className="text-sm text-green-200">Island&apos;s only specialist</p>
+                <p className="text-sm text-green-200">Expert repairs for all sauna models</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                 <div className="text-2xl mb-2">🏠</div>
@@ -1020,7 +937,7 @@ export default function Home() {
           {/* Call to action below form */}
           <div className="text-center mt-12">
             <p className="text-xl text-lime-200 mb-6">
-              🏝️ Island availability • 🔧 Silicon Valley expertise • ⚡ $5-10M insurance coverage
+              🏝️ Island availability  • ⚡ $5-10M insurance coverage 
             </p>
             <div className="flex justify-center space-x-8 text-lg">
               <div className="flex items-center">

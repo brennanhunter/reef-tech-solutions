@@ -1,130 +1,262 @@
-import Image from 'next/image';
+"use client";
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import Modal from '../ui/Modal';
 
-interface Service {
-  title: string;
-  image: string;
-  description: string;
-  highlights: string[];
-}
+interface Brand { name: string; logo?: string; }
+interface Product { name: string; description: string; }
+interface Category { id: string; title: string; brands?: Brand[]; products?: Product[]; blurb?: string; image?: string; }
 
-const services: Service[] = [
-  {
-    title: 'Smart Home Integration',
-    image: '/photos/services-images/HomeAutomation.jpg',
-    description: 'Unified control systems that make complex properties effortless to manage.',
-    highlights: ['Control systems', 'Voice + app scenes', 'Climate & shades', 'Custom dashboards']
-  },
-  {
-    title: 'Vacation Rental Automation',
-    image: '/photos/services-images/VacationRental.jpg',
-    description: 'Seamless guest experiences with secure, timed access and remote insight.',
-    highlights: ['Smart locks', 'Guest access windows', 'Noise / occupancy', 'Turnover workflows']
-  },
-  {
-    title: 'Pool & Spa Automation',
-    image: '/photos/services-images/Spa.jpg',
-    description: 'Remote chemistry, heating and equipment monitoring from anywhere on island.',
-    highlights: ['pH / ORP monitoring', 'Heater control', 'Automated dosing', 'Leak / flow alerts']
-  },
-  {
-    title: 'Security & Access Systems',
-    image: '/photos/services-images/Security.jpg',
-    description: 'Layered protection combining cameras, smart access and monitoring.',
-    highlights: ['Mag locks & keypads', 'Camera systems', 'Entry analytics', 'Remote audit trail']
-  },
-  {
-    title: 'Sauna & Spa Maintenance',
-    image: '/photos/services-images/Sauna.jpg',
-    description: 'Specialized repair and modernization for residential & commercial sauna systems.',
-    highlights: ['Diagnostics', 'Control retrofits', 'Heating elements', 'Preventive service']
-  },
-  {
-    title: 'Smart Lighting Design',
-    image: '/photos/services-images/Lighting.jpg',
-    description: 'Architectural + landscape lighting that elevates mood, safety and efficiency.',
-    highlights: ['Scene programming', 'Low‑voltage landscape', 'Energy optimization', 'RGBW accents']
-  }
+const categories: Category[] = [
+	{
+		id: 'lighting',
+		title: 'Premium Electrical & Lighting Services',
+		image: '/photos/services/Lighting.jpg',
+		brands: [{ name: 'Leviton' }, { name: 'Lutron' }],
+		blurb: 'For the demanding environment of luxury properties, you need electrical work that is both flawless and durable. We use only premium-grade components from respected brands, such as Leviton, known for their reliability and long-lasting performance. We also specialize in implementing advanced lighting and automation solutions from Lutron, a global leader in high-end control systems.\n\nBy combining the trusted durability of brands like Leviton with the sophisticated controls and automation of Lutron, we ensure that every upgrade, from switches and outlets to intelligent lighting and automated shades, is safe, reliable, and a perfect match for your property\'s quality standards. Whether we\'re performing routine maintenance or installing a complete, energy-efficient system, our work is designed to enhance both the guest experience and your operational efficiency, all while preserving the integrity of your property\'s luxurious design.'
+	},
+	{
+		id: 'maglocks',
+		title: 'Magnetic Locks',
+		image: '/photos/services/Security.jpg',
+		brands: [{ name: 'Allegion' }, { name: 'Maglocks.com' }, { name: 'Cobra Controls' }],
+		products: [
+			{ name: 'Allegion Shear Lock Series', description: 'Premium electromagnetic locks for high-security applications.' },
+			{ name: 'Cobra Controls Surface Mount Maglocks', description: 'Streamlined installation for various door types.' }
+		]
+	},
+	{
+		id: 'sauna',
+		title: 'Sauna & Spa Maintenance',
+		image: '/photos/services/Sauna.jpg',
+		brands: [{ name: 'Sunlighten' }, { name: 'Plunge' }],
+		products: [
+			{ name: 'Sunlighten Infrared Saunas', description: 'Wellness-focused installations for residential and commercial spaces.' },
+			{ name: 'Plunge Cold Therapy Systems', description: 'State-of-the-art recovery solutions for spas and fitness facilities.' }
+		]
+	},
+	{
+		id: 'rental',
+		title: 'Vacation Rental & Property Management Solutions',
+		image: '/photos/services/VacationRental.jpg',
+		blurb: 'Comprehensive automation systems for lighting, locks, climate control, and remote monitoring. Maintenance-friendly installations designed for guest turnover efficiency.'
+	}
 ];
 
 export default function ServicesSection() {
-  return (
-  <section id="services" className="py-28 bg-gradient-to-br from-white via-gray-50 to-slate-100 relative overflow-hidden">
-      {/* subtle grid backdrop */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.07] [mask-image:radial-gradient(circle_at_center,black,transparent)]">
-        <svg className="w-full h-full" viewBox="0 0 400 400">
-          <defs>
-            <pattern id="services-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M40 0H0V40" fill="none" stroke="#06b6d4" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="400" height="400" fill="url(#services-grid)" />
-        </svg>
-      </div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            <span className="bg-gradient-to-r from-cyan-600 via-teal-600 to-lime-500 bg-clip-text text-transparent">Integrated Technology Services</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">A unified stack of infrastructure, automation and maintenance that keeps premium island properties running reliably.</p>
-        </div>
+	const [openModal, setOpenModal] = useState<string | null>(null);
+	return (
+		<section id="services" className="py-28 bg-gradient-to-br from-white via-gray-50 to-slate-100 relative overflow-hidden">
+			<BackgroundPattern />
+			<div className="container mx-auto px-4 relative z-10">
+				<HeaderIntro />
+				<div className="space-y-24">
+					{categories.map((cat, idx) => (
+						<CategoryBlock key={cat.id} category={cat} index={idx} onOpen={() => setOpenModal(cat.id)} />
+					))}
+				</div>
+			</div>
 
-        {/* Card Grid */}
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
-          {services.map(service => (
-            <div key={service.title} className="group rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 relative border border-cyan-100 hover:border-cyan-300">
-              {/* Image */}
-              <div className="relative h-56 overflow-hidden">
-                <Image 
-                  src={service.image} 
-                  alt={service.title} 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                  priority={service.title === 'Smart Home Integration'}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
-                <h3 className="absolute bottom-4 left-5 right-5 text-2xl font-semibold text-white drop-shadow-md">
-                  {service.title}
-                </h3>
-              </div>
-              {/* Body */}
-              <div className="p-8 flex flex-col h-full">
-                <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">{service.description}</p>
-                <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-700 mb-6">
-                  {service.highlights.map(h => (
-                    <li key={h} className="flex items-start gap-2">
-                      <span className="mt-[3px] h-2 w-2 rounded-full bg-gradient-to-r from-cyan-500 to-lime-500 shadow-[0_0_0_3px_rgba(6,182,212,0.15)]" />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-200">
-                  <a href="#request-form" className="text-sm font-semibold text-cyan-700 group-hover:text-cyan-600 flex items-center gap-2">
-                    Learn more
-                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg>
-                  </a>
-                  <span className="text-[11px] uppercase tracking-wider font-medium text-gray-400">ReefTech</span>
-                </div>
-                {/* hover accent ring */}
-                <div className="pointer-events-none absolute inset-0 rounded-3xl ring-0 ring-cyan-400/0 group-hover:ring-4 group-hover:ring-cyan-400/30 transition-all duration-500" />
-              </div>
-            </div>
-          ))}
-        </div>
+			{/* Lighting / Electrical Modal */}
+			<Modal
+				open={openModal === 'lighting'}
+				onClose={() => setOpenModal(null)}
+				title="Premium Electrical & Lighting Solutions: The Leviton & Lutron Difference"
+				labelledBy="lighting-modal-title"
+				id="service-modal-lighting"
+			>
+				<div className="space-y-10 text-slate-700">
+					{/* Brand Icons Row */}
+					<div className="flex items-center gap-6 pt-1">
+						<div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm ring-1 ring-slate-200/70">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-icons/leviton-logo.svg" alt="Leviton" className="h-5 w-auto" />
+						</div>
+						<div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm ring-1 ring-slate-200/70">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-icons/lutron-logo.svg" alt="Lutron" className="h-5 w-auto" />
+						</div>
+					</div>
 
-        {/* CTA Banner */}
-        <div className="mt-24 relative overflow-hidden rounded-3xl bg-gradient-to-r from-cyan-600 via-teal-600 to-lime-500 text-white px-8 py-14 flex flex-col md:flex-row md:items-center md:justify-between shadow-xl">
-          <div className="max-w-2xl">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Build a Cohesive Technology Foundation</h3>
-            <p className="text-lg md:text-xl text-white/90">Start with a consultation – we map existing infrastructure, identify gaps and propose phased upgrades that fit your operations.</p>
-          </div>
-          <div className="mt-8 md:mt-0 flex gap-4">
-            <a href="#request-form" className="bg-white text-cyan-700 font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all text-lg">Request Consultation</a>
-            <a href="#process" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-4 rounded-2xl hover:bg-white/20 transition-all text-lg">Our Process</a>
-          </div>
-          <div className="pointer-events-none absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-        </div>
-      </div>
-    </section>
-  );
+					<p>In a luxury setting, every detail matters—especially those behind the scenes. We choose to work with industry-leading brands like Leviton and Lutron to ensure your electrical and lighting systems are not just functional, but also elevate the entire guest experience.</p>
+
+					<div className="space-y-5">
+						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Reliable Electrical Solutions with Leviton</h3>
+						<p>We choose to work with Leviton because they are the industry standard for safe, reliable, and innovative electrical products. When we install a Leviton component, you&apos;re not just getting a functional part; you&apos;re getting a solution built with durability, advanced safety, and superior aesthetics in mind.</p>
+						<p className="font-medium text-slate-800">We frequently install Leviton&apos;s top-tier products, including:</p>
+						<ul className="list-disc pl-5 space-y-4">
+							<li><strong>Leviton Decora® Smart Wi-Fi Dimmers:</strong> These intelligent dimmers provide effortless control over lighting, allowing you to set the perfect ambiance for different areas of your property. They can be controlled via an app, voice commands, or traditional wall switches, providing a modern and convenient experience for both staff and guests.</li>
+							<li><strong>Leviton Tamper-Resistant Outlets:</strong> Guest safety is a top priority. These outlets feature an internal shutter mechanism that blocks access to the contacts unless a two- or three-prong plug is inserted. This prevents objects from being inserted into the outlet, offering peace of mind in guest rooms and common areas.</li>
+							<li><strong>Leviton USB Charger Outlets:</strong> With the ever-increasing number of devices guests travel with, having convenient charging options is a must. These outlets replace standard outlets and feature built-in USB ports, allowing guests to charge their phones, tablets, and other devices without needing a bulky adapter. This is a small upgrade that significantly enhances the guest experience.</li>
+						</ul>
+						<p>By integrating these and other Leviton products into our work, we guarantee that your electrical systems are not only up to code but also equipped to provide lasting performance, safety, and a touch of modern convenience that guests will appreciate.</p>
+					</div>
+
+					<div className="space-y-5">
+						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Advanced Lighting & Automation with Lutron</h3>
+						<p>Building on this foundation of reliability, we integrate Lutron&apos;s sophisticated lighting and shade control systems to create a truly luxurious and efficient environment. Lutron is a global leader in intelligent automation, and their systems are specifically designed to meet the high standards of hospitality.</p>
+						<p className="font-medium text-slate-800">Our expertise with Lutron enables us to implement solutions that offer:</p>
+						<ul className="list-disc pl-5 space-y-4">
+							<li><strong>Personalized Ambiance:</strong> With Lutron&apos;s myRoom system, guests can create the perfect lighting scene in their room with a single touch. We also install Ketra lighting, which provides a full spectrum of tunable white light and vibrant colors, simulating natural daylight to enhance guest well-being.</li>
+							<li><strong>Effortless Control:</strong> Lutron&apos;s elegant controls, like the Palladiom keypad, are both beautiful and intuitive. Guests can adjust lights and automated shades from an elegant wall-mounted controller, or via a simple mobile interface, making their stay seamless and comfortable.</li>
+							<li><strong>Energy and Operational Efficiency:</strong> Lutron systems can be tied into your property management system (PMS) and other building controls. This allows for automated actions, such as lights and shades adjusting when a room becomes vacant, which dramatically reduces energy costs and simplifies operations for your staff.</li>
+							<li><strong>Seamless Design Integration:</strong> Lutron&apos;s products are renowned for their silent operation and minimalist design. Whether it’s a silent automated shade or a perfectly flush-mounted keypad, every component is installed to blend seamlessly with your property&apos;s architectural and interior design.</li>
+						</ul>
+					</div>
+				</div>
+			</Modal>
+		</section>
+	);
+}
+
+function HeaderIntro() {
+	return (
+		<div className="max-w-4xl mx-auto text-center mb-24">
+			<h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+				<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">ReefTech Service Spectrum</span>
+			</h2>
+			<p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+				Tailored technology and maintenance expertise — focused, brand-aligned, outcome driven.
+			</p>
+		</div>
+	);
+}
+
+function CategoryBlock({ category, index, onOpen }: { category: Category; index: number; onOpen: () => void }) {
+	const ref = useRef<HTMLDivElement | null>(null);
+	const inView = useInView(ref, { once: true, margin: '-80px' });
+	const isLighting = category.id === 'lighting';
+
+	return (
+		<motion.div
+			ref={ref}
+			initial={{ opacity: 0, y: 40 }}
+			animate={inView ? { opacity: 1, y: 0 } : {}}
+			transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.1 }}
+			className="relative"
+		>
+			<div className="relative bg-white/70 backdrop-blur-sm border border-cyan-100 rounded-3xl p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_50px_-10px_rgba(0,0,0,0.12)] transition-shadow overflow-hidden">
+				{isLighting && (
+					<div className="hidden lg:grid grid-cols-2 gap-4 absolute inset-y-6 right-6 w-[400px] xl:w-[460px]">
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							<div className="absolute top-2 left-2 bg-white/85 backdrop-blur-sm rounded-md px-1.5 py-1 shadow ring-1 ring-white/60">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-icons/leviton-logo.svg" alt="Leviton logo" className="h-5 w-auto" loading="lazy" />
+							</div>
+						</div>
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/lutron-lights.webp" alt="Lutron lighting system" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							<div className="absolute top-2 left-2 bg-white/85 backdrop-blur-sm rounded-md px-1.5 py-1 shadow ring-1 ring-white/60">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-icons/lutron-logo.svg" alt="Lutron logo" className="h-5 w-auto" loading="lazy" />
+							</div>
+						</div>
+						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
+							{index + 1}
+						</span>
+					</div>
+				)}
+				<div className={`relative ${isLighting ? 'lg:pr-[420px] xl:pr-[500px]' : ''}`}>
+					<h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">
+						<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">
+							{category.title}
+						</span>
+					</h3>
+					{category.brands && (
+						<div className="flex flex-wrap items-center gap-2 mb-6">
+							{category.brands.map(b => (
+								<BrandBadge key={b.name} brand={b} />
+							))}
+						</div>
+					)}
+					{category.blurb && (
+						<div className="text-lg text-gray-600 leading-relaxed space-y-5">
+							{category.blurb.split(/\n\n+/).map((para, i) => (
+								<p key={i}>{para}</p>
+							))}
+						</div>
+					)}
+					{category.products && !category.blurb && (
+						<ul className="space-y-4">
+							{category.products.map(prod => (
+								<li key={prod.name} className="group">
+									<div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
+										<span className="font-semibold text-gray-800 group-hover:text-teal-600 transition-colors">
+											{prod.name}
+										</span>
+										<span className="text-gray-500 text-sm hidden sm:inline">—</span>
+										<p className="text-gray-600 text-sm md:text-base leading-relaxed flex-1">
+											{prod.description}
+										</p>
+									</div>
+								</li>
+							))}
+						</ul>
+					)}
+					<div className="mt-8">
+						<button
+							type="button"
+							onClick={onOpen}
+							className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow hover:from-teal-500 hover:to-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-white transition disabled:opacity-50"
+						>
+							Read More
+							<svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg>
+						</button>
+					</div>
+				</div>
+				{!isLighting && (
+					<div className="hidden lg:flex w-64 flex-none items-center justify-center">
+						{category.image ? (
+							<div className="relative w-full h-48 overflow-hidden rounded-2xl shadow-lg group">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img
+									src={category.image}
+									alt={category.title + ' representative image'}
+									className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+									loading="lazy"
+								/>
+								<div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+								<span className="absolute bottom-2 left-3 text-[11px] tracking-wide font-semibold text-white/90 bg-black/30 px-2 py-0.5 rounded-full backdrop-blur-sm">
+									{index + 1}
+								</span>
+							</div>
+						) : (
+							<div className="w-full h-48 rounded-2xl bg-gradient-to-br from-cyan-50 to-lime-50 border border-cyan-100 flex items-center justify-center text-cyan-600 text-sm font-medium tracking-wide">
+								Category {index + 1}
+							</div>
+						)}
+					</div>
+				)}
+				<div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-transparent hover:ring-cyan-300/40 transition-all duration-500" />
+			</div>
+		</motion.div>
+	);
+}
+
+function BrandBadge({ brand }: { brand: Brand }) {
+	return (
+		<span className="px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500/10 via-teal-500/10 to-lime-500/10 border border-cyan-300/30 text-[11px] font-semibold tracking-wide text-cyan-700 shadow-[0_0_0_3px_rgba(6,182,212,0.08)]">
+			{brand.name}
+		</span>
+	);
+}
+
+function BackgroundPattern() {
+	return (
+		<div className="pointer-events-none absolute inset-0 opacity-[0.06] [mask-image:radial-gradient(circle_at_center,black,transparent)]">
+			<svg className="w-full h-full" viewBox="0 0 400 400" aria-hidden="true">
+				<defs>
+					<pattern id="svc-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+						<path d="M40 0H0V40" fill="none" stroke="#0ea5e9" strokeWidth="0.5" />
+					</pattern>
+				</defs>
+				<rect width="400" height="400" fill="url(#svc-grid)" />
+			</svg>
+		</div>
+	);
 }

@@ -1,49 +1,92 @@
+
+import { AlertTriangle } from 'lucide-react';
+
 export default function EmergencyCTASection() {
   return (
-    <section id="emergency" className="relative py-24 bg-red-600 overflow-hidden shadow-lg mt-2" style={{ background: 'linear-gradient(90deg, #ff3333, #cc0000)' }}>
-      <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-10 max-w-4xl">
-        <div className="relative flex-1 text-center md:text-left">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-yellow-500 opacity-10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+    <section
+      id="emergency"
+      className="relative py-16 overflow-hidden shadow-lg mt-6 text-white"
+      style={{ background: 'linear-gradient(100deg,#ff6a00,#ff3d00 45%,#ff9a1e)' }}
+    >
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 opacity-90 mix-blend-normal animate-warning-gradient" aria-hidden="true"></div>
+      {/* Soft pulsing radial highlights */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-32 -left-32 w-80 h-80 bg-amber-300/20 rounded-full blur-3xl animate-halo-pulse" />
+        <div className="absolute top-1/2 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/2 animate-halo-pulse-delayed" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+          {/* Left: Headline & Copy with Siren */}
+          <div className="flex-1 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
+              <div className="relative">
+                <AlertTriangle className="w-14 h-14 md:w-16 md:h-16 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.35)] animate-siren-pulse" aria-hidden="true" />
+                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 animate-ping-fast" aria-hidden="true"></span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+                <span className="bg-gradient-to-r from-white via-amber-100 to-yellow-300 bg-clip-text text-transparent">Have an Emergency?</span>
+              </h2>
+            </div>
+            <p className="text-base md:text-lg text-orange-50/95 font-medium mb-4 leading-relaxed">
+              We’re here for urgent electrical issues on Oahu. Power outage, exposed wiring, breaker failures or safety concerns? Call now.
+            </p>
+            <p className="text-xs md:text-sm text-white/80 italic md:hidden">Fast priority response for critical electrical issues.</p>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-4" style={{ color: 'white' }}>
-            <span className="bg-gradient-to-r from-white to-yellow-300 bg-clip-text text-transparent">Have an Emergency?</span>
-          </h2>
-          <p className="text-lg md:text-xl text-white font-medium mb-6 leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
-            We’re here for urgent electrical issues on Oahu. If you need immediate assistance with power outages, exposed wiring, or safety concerns, call us now.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+          {/* Right: Actions */}
+          <div className="w-full md:w-auto flex md:flex-col items-stretch md:items-end justify-center gap-4">
             <a
               href="tel:+1-808-303-4627"
-              className="bg-yellow-400 hover:bg-yellow-300 text-red-900 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+              className="group bg-white text-orange-700 hover:text-orange-800 px-6 py-4 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 border border-white/60 hover:scale-[1.03]"
             >
-              <PhoneIcon /> Emergency Line: (808) 303-4627
+              <PhoneIcon /> <span className="whitespace-nowrap">(808) 303-4627</span>
             </a>
             <a
               href="#request-form"
-              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 transition-transform duration-300 border border-white/30"
+              className="bg-orange-900/20 hover:bg-orange-900/30 text-white px-6 py-4 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 backdrop-blur-sm hover:scale-[1.03]"
             >
               Request Service
             </a>
+            <p className="hidden md:block mt-1 text-right text-xs text-white/80 italic">Fast priority response for critical electrical issues.</p>
           </div>
-          <p className="mt-4 text-sm text-white/90 italic">Available for urgent electrical needs — call now for fast response.</p>
-        </div>
-        <div className="flex-1 grid grid-cols-2 gap-4">
-          {[
-            { label: 'Power Outages', icon: '⚡' },
-            { label: 'Safety Hazards', icon: '🚨' },
-            { label: 'Exposed Wiring', icon: '🛠️' },
-            { label: 'Breaker Issues', icon: '🔧' },
-          ].map((item) => (
-            <div key={item.label} className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 flex flex-col items-center justify-center hover:bg-white/20 transition-all duration-300">
-              <div className="text-4xl mb-2" aria-hidden="true">{item.icon}</div>
-              <span className="text-sm font-medium text-white text-center" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>{item.label}</span>
-            </div>
-          ))}
         </div>
       </div>
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%)' }}></div>
+      {/* Fallback subtle vignette */}
+      <div className="pointer-events-none absolute inset-0 opacity-40" style={{ background: 'radial-gradient(circle at 30% 50%,rgba(255,255,255,0.18),transparent 60%),radial-gradient(circle at 80% 40%,rgba(255,255,255,0.12),transparent 65%)' }}></div>
+      {/* Keyframes + reduced motion handling */}
+      <style jsx>{`
+        @keyframes warningGradient { 
+          0% { background: linear-gradient(100deg,#ff6a00,#ff3d00 45%,#ff9a1e); }
+          35% { background: linear-gradient(110deg,#ff7d00,#ff5600 50%,#ffb628); }
+          70% { background: linear-gradient(95deg,#ff9a1e,#ff6a00 40%,#ffd24d); }
+          100% { background: linear-gradient(100deg,#ff6a00,#ff3d00 45%,#ff9a1e); }
+        }
+        @keyframes haloPulse {
+          0%,100% { transform: scale(1); opacity:.55; }
+          50% { transform: scale(1.08); opacity:.9; }
+        }
+        @keyframes haloPulseDelayed {
+          0%,100% { transform: scale(1); opacity:.35; }
+          50% { transform: scale(1.15); opacity:.7; }
+        }
+        @keyframes sirenPulse {
+          0%,100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.5)); transform: translateY(0); }
+          50% { filter: drop-shadow(0 0 14px rgba(255,255,255,0.85)); transform: translateY(-2px); }
+        }
+        @keyframes pingFast { 0% { transform: scale(.75); opacity:.9;} 70% { transform: scale(1.5); opacity:0;} 100% { opacity:0;} }
+        .animate-warning-gradient { animation: warningGradient 6s ease-in-out infinite; }
+        .animate-halo-pulse { animation: haloPulse 7s ease-in-out infinite; }
+        .animate-halo-pulse-delayed { animation: haloPulseDelayed 8s ease-in-out infinite 1s; }
+        .animate-siren-pulse { animation: sirenPulse 2.8s ease-in-out infinite; }
+        .animate-ping-fast { animation: pingFast 1.6s cubic-bezier(0,0,.2,1) infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-warning-gradient,
+          .animate-halo-pulse,
+          .animate-halo-pulse-delayed,
+          .animate-siren-pulse,
+          .animate-ping-fast { animation: none !important; }
+        }
+      `}</style>
     </section>
   );
 }

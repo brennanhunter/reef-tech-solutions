@@ -5,6 +5,7 @@ import EmergencyCTASection from './components/home/EmergencyCTASection';
 import ProcessSection from './components/home/ProcessSection';
 import ResourcesSection from './components/home/ResourcesSection';
 import RequestFormSection from './components/home/RequestFormSection';
+import ServicesSection from './components/home/ServicesSection';
 
 export default function Home() {
   return (
@@ -89,30 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section (updated with images + scroll animations) */}
-      <section id="services" className="py-28 bg-gradient-to-br from-white via-gray-50 to-slate-100 relative overflow-hidden">
-        {/* background grid */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.06] [mask-image:radial-gradient(circle_at_center,black,transparent)]">
-          <svg className="w-full h-full" viewBox="0 0 400 400" aria-hidden="true">
-            <defs>
-              <pattern id="svc-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M40 0H0V40" fill="none" stroke="#0ea5e9" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="400" height="400" fill="url(#svc-grid)" />
-          </svg>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">Integrated Technology Solutions</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">Complete building technology stack – from smart locks to saunas</p>
-          </div>
-          {/* Animated card grid */}
-          <ServicesAnimatedGrid />
-        </div>
-      </section>
+  <ServicesSection />
 
   {/* Emergency Section moved directly below Services */}
   <EmergencyCTASection />
@@ -259,7 +237,7 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="max-w-5xl mx-auto">
             <div>
               <h3 className="text-5xl md:text-6xl font-bold mb-8">
                 <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">
@@ -303,58 +281,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
-            <div className="text-center relative">
-              {/* Project showcase instead of headshot */}
-              <div className="grid grid-cols-2 gap-6">
-                {/* Top left - Technology close-up */}
-                <div className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[4/3]">
-                  <img 
-                    src="/photos/work/IMG_6931.jpg" 
-                    alt="Professional Installation Work"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Professional Installation
-                  </div>
-                </div>
-                
-                {/* Top right - Clean finished work */}
-                <div className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[4/3]">
-                  <img 
-                    src="/photos/work/IMG_7164.jpg" 
-                    alt="Smart Home Technology"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Smart Integration
-                  </div>
-                </div>
-                
-                {/* Bottom - Spanning both columns */}
-                <div className="col-span-2 relative rounded-2xl overflow-hidden shadow-xl group aspect-[16/6]">
-                  <img 
-                    src="/photos/work/IMG_6814.jpg" 
-                    alt="Advanced Technology Systems"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Advanced Systems
-                  </div>
-                </div>
-              </div>
-              
-              {/* Floating tech elements */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl animate-bounce">
-                ⚡
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-lime-400 to-cyan-500 rounded-full flex items-center justify-center text-white text-xl animate-pulse">
-                🔧
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -368,99 +294,4 @@ export default function Home() {
   );
 }
 
-// ServicesAnimatedGrid component (inline for now; could be extracted later)
-import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-
-interface ServiceCardData { title: string; image: string; description: string; highlights: string[]; }
-
-const serviceCards: ServiceCardData[] = [
-  {
-    title: 'Smart Home Integration',
-    image: '/photos/services/HomeAutomation.jpg',
-    description: 'Complete home automation systems with unified control, voice integration and custom programming for effortless living.',
-    highlights: ['Control systems', 'Voice + app scenes', 'Climate & shades', 'Custom dashboards']
-  },
-  {
-    title: 'Vacation Rental Automation',
-    image: '/photos/services/VacationRental.jpg',
-    description: 'Seamless guest experiences with secure, timed access, remote monitoring and turnover efficiency.',
-    highlights: ['Smart locks', 'Guest access windows', 'Noise monitoring', 'Turnover workflows']
-  },
-  {
-    title: 'Pool & Spa Automation',
-    image: '/photos/services/Spa.jpg',
-    description: 'Remote chemistry, heating and equipment insight from anywhere on island for pristine water quality.',
-    highlights: ['pH / ORP monitoring', 'Heater control', 'Automated dosing', 'Leak / flow alerts']
-  },
-  {
-    title: 'Security & Access Systems',
-    image: '/photos/services/Security.jpg',
-    description: 'Layered protection combining cameras, smart access, monitoring and audit trail visibility.',
-    highlights: ['Mag locks & keypads', 'Camera systems', 'Entry analytics', 'Remote audit trail']
-  },
-  {
-    title: 'Sauna & Spa Maintenance',
-    image: '/photos/services/Sauna.jpg',
-    description: 'Specialized repair & modernization for residential and commercial sauna systems.',
-    highlights: ['Diagnostics', 'Control retrofits', 'Heating elements', 'Preventive service']
-  },
-  {
-    title: 'Smart Lighting Design',
-    image: '/photos/services/Lighting.jpg',
-    description: 'Architectural & landscape lighting elevating mood, safety and efficiency with scene programming.',
-    highlights: ['Scene programming', 'Landscape low‑voltage', 'Energy optimization', 'RGBW accents']
-  }
-];
-
-function ServicesAnimatedGrid() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(containerRef, { once: true, margin: '-50px' });
-  const controls = useAnimation();
-
-  useEffect(() => { if (inView) controls.start('visible'); }, [inView, controls]);
-
-  return (
-    <div ref={containerRef} className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
-      {serviceCards.map((card, i) => (
-        <motion.div
-          key={card.title}
-          initial="hidden"
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, y: 40, scale: 0.96 },
-              visible: { opacity: 1, y: 0, scale: 1 }
-            }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: i * 0.08 }}
-            className="group rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 relative border border-cyan-100 hover:border-cyan-300"
-        >
-          <div className="relative h-56 overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading={i < 2 ? 'eager' : 'lazy'} />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
-            <h3 className="absolute bottom-4 left-5 right-5 text-2xl font-semibold text-white drop-shadow-md">{card.title}</h3>
-          </div>
-          <div className="p-8 flex flex-col h-full">
-            <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">{card.description}</p>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-700 mb-6">
-              {card.highlights.map(h => (
-                <li key={h} className="flex items-start gap-2">
-                  <span className="mt-[3px] h-2 w-2 rounded-full bg-gradient-to-r from-cyan-500 to-lime-500 shadow-[0_0_0_3px_rgba(6,182,212,0.15)]" />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-200">
-              <a href="#request-form" className="text-sm font-semibold text-cyan-700 group-hover:text-cyan-600 flex items-center gap-2">
-                Learn more
-                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg>
-              </a>
-              <span className="text-[11px] uppercase tracking-wider font-medium text-gray-400">ReefTech</span>
-            </div>
-            <div className="pointer-events-none absolute inset-0 rounded-3xl ring-0 ring-cyan-400/0 group-hover:ring-4 group-hover:ring-cyan-400/30 transition-all duration-500" />
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  );
-}
+// (Services section now refactored into components/home/ServicesSection.tsx)

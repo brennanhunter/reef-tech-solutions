@@ -1,180 +1,81 @@
-import { Facebook, Instagram } from 'lucide-react'
+'use client'
+import { Facebook, Instagram, Phone, Twitter } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="container mx-auto px-4 py-16">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          
-          {/* Company Info */}
-          <div className="space-y-4">
-            <h4 className="text-lime-400 text-xl font-semibold mb-6">
-              ReefTech Solutions
-            </h4>
-            <div className="space-y-3 text-gray-300">
-              <p>Smart Home Integration Specialist</p>
-              <p>Serving Big Island, Hawaii</p>
-              <p>
-                <a 
-                  href="tel:8083034627" 
-                  className="hover:text-lime-400 transition-colors duration-300"
-                >
-                  📞 (808) 303-4627
-                </a>
-              </p>
-              <p>Licensed, Bonded & Insured</p>
-              <p className="text-sm opacity-75">$5-10 Million Insurance Coverage</p>
-            </div>
-          </div>
-
-          {/* Services */}
-          <div className="space-y-4">
-            <h4 className="text-lime-400 text-xl font-semibold mb-6">
-              Our Services
-            </h4>
-            <ul className="space-y-2 text-gray-300">
-              {[
-                'Smart Home Integration',
-                'Vacation Rental Automation',
-                'Pool & Spa Technology',
-                'Security & Access Systems',
-                'Sauna & Spa Maintenance',
-                'Smart Lighting Design'
-              ].map((service, index) => (
-                <li 
-                  key={index}
-                  className="hover:text-lime-400 transition-colors duration-300 cursor-pointer"
-                >
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Service Areas */}
-          <div className="space-y-4">
-            <h4 className="text-lime-400 text-xl font-semibold mb-6">
-              Vacation Rental Areas
-            </h4>
-            <ul className="space-y-2 text-gray-300">
-              {[
-                'Kailua-Kona Rentals',
-                'Waimea/Kamuela Properties',
-                'Kohala Coast Resorts',
-                'Hilo Vacation Homes',
-                'Volcano Area Properties',
-                'Island-wide Service'
-              ].map((area, index) => (
-                <li 
-                  key={index}
-                  className="hover:text-lime-400 transition-colors duration-300"
-                >
-                  {area}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Features */}
-          <div className="space-y-4">
-            <h4 className="text-lime-400 text-xl font-semibold mb-6">
-              Connect With Us
-            </h4>
-            <div className="space-y-3 text-gray-300">
-              <p>
-                <a 
-                  href="tel:8083034627" 
-                  className="hover:text-lime-400 transition-colors duration-300 block"
-                >
-                  📞 Call: (808) 303-4627
-                </a>
-              </p>
-              <p>
-                <a 
-                  href="#request-form" 
-                  className="hover:text-lime-400 transition-colors duration-300 block"
-                >
-                  💻 Request Online Quote
-                </a>
-              </p>
-              <p>
-                <a 
-                  href="https://www.facebook.com/reeftechsolutions" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-lime-400 transition-colors duration-300 flex items-center gap-2"
-                >
-                  <div className="bg-blue-600 p-1.5 rounded-md">
-                    <Facebook className="w-4 h-4 text-white" />
-                  </div>
-                  Follow on Facebook
-                </a>
-              </p>
-              <p>
-                <a 
-                  href="https://www.instagram.com/reeftechsolutions/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-lime-400 transition-colors duration-300 flex items-center gap-2"
-                >
-                  <div className="bg-gradient-to-r from-pink-500 to-purple-600 p-1.5 rounded-md">
-                    <Instagram className="w-4 h-4 text-white" />
-                  </div>
-                  Follow on Instagram
-                </a>
-              </p>
-              <div className="pt-4 space-y-2">
-                <p className="text-lime-400 font-medium">✓ Vacation Rental Specialists</p>
-                <p className="text-lime-400 font-medium">✓ Multi-Property Discounts</p>
-                <p className="text-lime-400 font-medium">✓ Remote Monitoring Setup</p>
-                <p className="text-lime-400 font-medium">✓ Free Property Assessments</p>
-                <div className="pt-2 text-xs opacity-50">
-                  ₿ Crypto payments accepted
-                </div>
-              </div>
-            </div>
-          </div>
+    <footer className="bg-gray-900 text-white border-t border-gray-800">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center text-center">
+          {/* Phone */}
+          <a
+            href="tel:+1-808-303-4627"
+            className="group flex flex-col items-center gap-2 text-sm font-medium hover:text-amber-300 transition-colors"
+            aria-label="Call ReefTech Solutions"
+          >
+            <span className="p-3 rounded-full bg-gray-800 group-hover:bg-gray-700 transition-colors">
+              <Phone className="w-5 h-5" />
+            </span>
+            (808) 303-4627
+          </a>
+          {/* Facebook */}
+          <a
+            href="https://www.facebook.com/reeftechsolutions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center gap-2 text-sm font-medium hover:text-blue-400 transition-colors"
+            aria-label="Visit our Facebook page"
+          >
+            <span className="p-3 rounded-full bg-gray-800 group-hover:bg-blue-600 transition-colors">
+              <Facebook className="w-5 h-5" />
+            </span>
+            Facebook
+          </a>
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/reeftechsolutions/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center gap-2 text-sm font-medium hover:text-pink-300 transition-colors"
+            aria-label="Visit our Instagram profile"
+          >
+            <span className="p-3 rounded-full bg-gray-800 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-600 transition-all">
+              <Instagram className="w-5 h-5" />
+            </span>
+            Instagram
+          </a>
+          {/* X (placeholder) */}
+          <a
+            href="#" /* TODO: replace with X.com profile link */
+            className="group flex flex-col items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            aria-label="Visit our X profile (link coming soon)"
+          >
+            <span className="p-3 rounded-full bg-gray-800 group-hover:bg-black transition-colors flex items-center justify-center">
+              {/* Using Twitter icon as placeholder; can swap for custom X glyph */}
+              <Twitter className="w-5 h-5" />
+            </span>
+            X
+          </a>
         </div>
-
-        {/* Specialties Section */}
-        <div className="border-t border-gray-700 pt-8 mb-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-gray-700 rounded-xl">
-              <div className="text-3xl mb-3">🏝️</div>
-              <h5 className="text-lime-400 font-semibold mb-2">Island&apos;s Only Sauna Specialist</h5>
-              <p className="text-gray-300 text-sm">Others fly in from other islands - we&apos;re here when you need us</p>
-            </div>
-            <div className="text-center p-6 bg-gray-700 rounded-xl">
-              <div className="text-3xl mb-3">🔧</div>
-              <h5 className="text-lime-400 font-semibold mb-2">Advanced Technology Expertise</h5>
-              <p className="text-gray-300 text-sm">Professional smart home integration and automation solutions</p>
-            </div>
-            <div className="text-center p-6 bg-gray-700 rounded-xl">
-              <div className="text-3xl mb-3">⚡</div>
-              <h5 className="text-lime-400 font-semibold mb-2">No Permit Delays</h5>
-              <p className="text-gray-300 text-sm">Massive insurance coverage means faster project completion</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="border-t border-gray-700 pt-8 text-center">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              &copy; 2025 ReefTech Solutions. All rights reserved.
+        <div className="mt-8 text-center text-xs sm:text-sm tracking-wide text-gray-400 font-medium">
+          <span className="text-base sm:text-lg font-semibold text-gray-200">&copy; {new Date().getFullYear()} ReefTech Solutions</span>
+          <div className="mt-3">
+            <p className="text-[10px] md:text-xs">
+              <a
+                href="https://xtremery.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent animate-pulse hover:animate-shimmer font-medium"
+              >
+                pixel‑polished by Xtremery · Deland, FL
+              </a>
             </p>
-            <p className="text-lime-400 font-medium text-lg">
-              Advanced Technology. Professional Service.
-            </p>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="hover:text-lime-400 transition-colors duration-300">Licensing</a>
-            </div>
           </div>
+          <style jsx>{`
+            @keyframes shimmerX {0%{background-position:0% 50%}100%{background-position:200% 50%}}
+            .hover\\:animate-shimmer:hover{animation:shimmerX 1.75s linear infinite;background-size:200% 100%;}
+          `}</style>
         </div>
       </div>
     </footer>
-  );
+  )
 }

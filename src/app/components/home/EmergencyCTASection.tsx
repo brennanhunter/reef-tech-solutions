@@ -29,9 +29,9 @@ export default function EmergencyCTASection() {
               </h2>
             </div>
             <p className="text-base md:text-lg text-orange-50/95 font-medium mb-4 leading-relaxed">
-              We’re here for urgent electrical issues on Oahu. Power outage, exposed wiring, breaker failures or safety concerns? Call now.
+              Call now for assistance with any Big Island property issues.
             </p>
-            <p className="text-xs md:text-sm text-white/80 italic md:hidden">Fast priority response for critical electrical issues.</p>
+            <p className="text-xs md:text-sm text-white/80 italic md:hidden">Fast Response, Local Help.</p>
           </div>
           {/* Right: Actions */}
           <div className="w-full md:w-auto flex md:flex-col items-stretch md:items-end justify-center gap-4">
@@ -47,7 +47,7 @@ export default function EmergencyCTASection() {
             >
               Request Service
             </a>
-            <p className="hidden md:block mt-1 text-right text-xs text-white/80 italic">Fast priority response for critical electrical issues.</p>
+            <p className="hidden md:block mt-1 text-right text-xs text-white/80 italic">Fast Response, Local Help.</p>
           </div>
         </div>
       </div>

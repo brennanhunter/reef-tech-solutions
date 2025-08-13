@@ -23,8 +23,25 @@ export default function ResourcesSection() {
     }
   ];
   return (
-    <section id="resources" className="relative py-24 bg-white overflow-hidden mt-2">
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 20% 20%, rgba(0,206,209,0.12), transparent 70%), radial-gradient(circle at 80% 80%, rgba(72,209,204,0.12), transparent 70%)' }}></div>
+    <section id="resources" className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden">
+      {/* Advanced circuit background */}
+      <div className="absolute inset-0 opacity-10">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="resources-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6"/>
+              <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5"/>
+              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.7">
+                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+            </pattern>
+          </defs>
+          <rect width="100" height="100" fill="url(#resources-circuit)"/>
+        </svg>
+      </div>
       <div className="container mx-auto px-4 text-center relative z-10 max-w-5xl">
         <h2 className="text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent">Resources & Guides</h2>
         <p className="text-xl text-gray-700 font-medium leading-relaxed mb-16 max-w-2xl mx-auto">Empower your decisions with practical insights drawn from real-world electrical service experience.</p>

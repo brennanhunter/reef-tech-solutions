@@ -6,15 +6,8 @@ export default function EmergencyCTASection() {
     <section
       id="emergency"
       className="relative py-16 overflow-hidden shadow-lg mt-6 text-white"
-      style={{ background: 'linear-gradient(100deg,#ff6a00,#ff3d00 45%,#ff9a1e)' }}
+      style={{ background: 'linear-gradient(100deg,#ff5722,#e64a19 45%,#d84315)' }}
     >
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 opacity-90 mix-blend-normal animate-warning-gradient" aria-hidden="true"></div>
-      {/* Soft pulsing radial highlights */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -left-32 w-80 h-80 bg-amber-300/20 rounded-full blur-3xl animate-halo-pulse" />
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/2 animate-halo-pulse-delayed" />
-      </div>
       <div className="container mx-auto px-4 relative z-10 max-w-5xl">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
           {/* Left: Headline & Copy with Siren */}
@@ -28,10 +21,6 @@ export default function EmergencyCTASection() {
                 <span className="bg-gradient-to-r from-white via-amber-100 to-yellow-300 bg-clip-text text-transparent">Have an Emergency?</span>
               </h2>
             </div>
-            <p className="text-base md:text-lg text-orange-50/95 font-medium mb-4 leading-relaxed">
-              Call now for assistance with any Big Island property issues.
-            </p>
-            <p className="text-xs md:text-sm text-white/80 italic md:hidden">Fast Response, Local Help.</p>
           </div>
           {/* Right: Actions */}
           <div className="w-full md:w-auto flex md:flex-col items-stretch md:items-end justify-center gap-4">
@@ -43,11 +32,11 @@ export default function EmergencyCTASection() {
             </a>
             <a
               href="#request-form"
-              className="bg-orange-900/20 hover:bg-orange-900/30 text-white px-6 py-4 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 backdrop-blur-sm hover:scale-[1.03]"
+              className="bg-orange-900/20 hover:bg-orange-900/30 text-white px-8 py-4 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 backdrop-blur-sm hover:scale-[1.03]"
             >
               Request Service
             </a>
-            <p className="hidden md:block mt-1 text-right text-xs text-white/80 italic">Fast Response, Local Help.</p>
+            
           </div>
         </div>
       </div>

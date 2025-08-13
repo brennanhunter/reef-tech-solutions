@@ -6,9 +6,25 @@ export default function ProcessSection() {
     { title: 'Quality Execution', description: 'On-time delivery with testing, documentation, and long-term support.' },
   ];
   return (
-    <section id="process" className="relative py-28 bg-gray-50 overflow-hidden mt-2">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-cyan-100 via-teal-50 to-transparent opacity-70 -z-10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-cyan-100 via-teal-50 to-transparent opacity-70 -z-10 rounded-full blur-3xl"></div>
+    <section id="process" className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden">
+      {/* Advanced circuit background */}
+      <div className="absolute inset-0 opacity-10">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="projects-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6"/>
+              <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5"/>
+              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.7">
+                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+            </pattern>
+          </defs>
+          <rect width="100" height="100" fill="url(#projects-circuit)"/>
+        </svg>
+      </div>
       <div className="container mx-auto px-4 text-center max-w-4xl">
         <div className="bg-white/70 backdrop-blur-md border border-gray-200/60 p-10 rounded-3xl shadow-xl mb-12" style={{ boxShadow: '0 8px 40px -12px rgba(0, 128, 128, 0.25)' }}>
           <h2 className="text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent">Our Process</h2>

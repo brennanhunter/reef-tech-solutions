@@ -60,25 +60,7 @@ export default function RequestFormSection() {
           />
         </div>
         {/* Call to action below form */}
-        <div className="text-center mt-12">
-          <p className="text-xl text-lime-200 mb-6">
-            🏝️ Island availability  • ⚡ $5-10M insurance coverage 
-          </p>
-          <div className="flex justify-center space-x-8 text-lg">
-            <div className="flex items-center">
-              <span className="w-3 h-3 bg-lime-400 rounded-full mr-2 animate-pulse"></span>
-              Smart Home Integration
-            </div>
-            <div className="flex items-center">
-              <span className="w-3 h-3 bg-cyan-400 rounded-full mr-2 animate-pulse" style={{ animationDelay: '0.5s' }}></span>
-              Vacation Rental Automation
-            </div>
-            <div className="flex items-center">
-              <span className="w-3 h-3 bg-teal-400 rounded-full mr-2 animate-pulse" style={{ animationDelay: '1s' }}></span>
-              Pool & Spa Systems
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

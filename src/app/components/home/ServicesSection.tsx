@@ -395,6 +395,28 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 		>
 			<div className="relative bg-white border border-gray-200 rounded-3xl p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_50px_-10px_rgba(0,0,0,0.4)] transition-shadow overflow-hidden">
 				{isLighting && (
+					<div className="mt-6 grid grid-cols-2 gap-3 lg:hidden">
+						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							<div className="absolute top-1 left-1 bg-white/85 backdrop-blur-sm rounded-md px-1 py-0.5 shadow ring-1 ring-white/60">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-icons/leviton-logo.svg" alt="Leviton logo" className="h-3 w-auto" loading="lazy" />
+							</div>
+						</div>
+						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/lutron-lights.webp" alt="Lutron lighting system" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							<div className="absolute top-1 left-1 bg-white/85 backdrop-blur-sm rounded-md px-1 py-0.5 shadow ring-1 ring-white/60">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-icons/lutron-logo.svg" alt="Lutron logo" className="h-3 w-auto" loading="lazy" />
+							</div>
+						</div>
+					</div>
+				)}
+				{isLighting && (
 					<div className="hidden lg:grid grid-cols-2 gap-4 absolute inset-y-6 right-6 w-[400px] xl:w-[460px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -420,6 +442,15 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					</div>
 				)}
 				{isAccessControl && (
+					<div className="mt-6 lg:hidden">
+						<div className="relative h-48 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/von-duprin.jpg" alt="Von Duprin premium door hardware installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
+						</div>
+					</div>
+				)}
+				{isAccessControl && (
 					<div className="hidden lg:block absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -428,6 +459,25 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 							<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
 								{index + 1}
 							</span>
+						</div>
+					</div>
+				)}
+				{isMaglocks && (
+					<div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock1.jpg" alt="Magnetic lock installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock2.jpg" alt="Magnetic lock hardware detail" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock3.jpg" alt="Magnetic lock system overview" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 					</div>
 				)}
@@ -454,6 +504,20 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					</div>
 				)}
 				{isSauna && (
+					<div className="mt-6 grid grid-cols-2 gap-3 lg:hidden">
+						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/sauna-1.jpg" alt="Professional sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+					</div>
+				)}
+				{isSauna && (
 					<div className="hidden lg:grid grid-cols-2 gap-4 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -468,6 +532,15 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
 							{index + 1}
 						</span>
+					</div>
+				)}
+				{isRental && (
+					<div className="mt-6 lg:hidden">
+						<div className="relative h-48 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/vacation-rental.jpg" alt="Smart vacation rental automation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
 					</div>
 				)}
 				{isRental && (

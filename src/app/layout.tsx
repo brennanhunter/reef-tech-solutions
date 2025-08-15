@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./components/Header";
+import MarketingHeader from "./components/MarketingHeader";
 import Footer from "./components/Footer";
 
 const geistSans = Geist({
@@ -16,12 +17,18 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 
+const tanHeadline = localFont({
+  src: "./fonts/TAN-Headline-Regular.woff2",
+  variable: "--font-tan-headline",
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "ReefTech Solutions - Your Property's Complete Tech Department | Hawaii Smart Home Experts",
     template: "%s | ReefTech Solutions - Hawaii Smart Home Integration"
   },
-  description: "Silicon Valley expertise with island availability. From smart locks to saunas - we handle your entire building technology stack. Professional smart home integration, vacation rental automation, and specialized sauna maintenance on Hawaii's Big Island.",
+  description: "Professional smart home integration and building technology solutions for Hawaii's Big Island. From smart locks to saunas - we handle your entire property technology stack. Vacation rental automation, sauna maintenance, and comprehensive tech support.",
   keywords: [
     // Primary Keywords
     "smart home Hawaii",
@@ -74,7 +81,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "ReefTech Solutions - Your Property's Complete Tech Department",
-    description: "Silicon Valley expertise with island availability. From smart locks to saunas - we handle your entire building technology stack in Hawaii.",
+    description: "Professional smart home integration and building technology solutions for Hawaii's Big Island. From smart locks to saunas - we handle your entire property technology stack.",
     url: 'https://reeftech.io',
     siteName: 'ReefTech Solutions',
     images: [
@@ -384,9 +391,9 @@ export default function RootLayout({
         <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${tanHeadline.variable} antialiased`}
       >
-        <Header />
+        <MarketingHeader />
         {children}
         <Footer />
       </body>

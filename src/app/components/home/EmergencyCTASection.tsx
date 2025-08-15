@@ -5,7 +5,7 @@ export default function EmergencyCTASection() {
   return (
     <section
       id="emergency"
-      className="relative py-16 overflow-hidden shadow-lg mt-6 text-white"
+      className="relative py-16 overflow-hidden shadow-lg text-white"
       style={{ background: 'linear-gradient(100deg,#ff5722,#e64a19 45%,#d84315)' }}
     >
       <div className="container mx-auto px-4 relative z-10 max-w-5xl">

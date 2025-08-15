@@ -6,7 +6,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-teal-600 text-white sticky top-0 z-50 shadow-lg">
+    <header className="bg-gradient-to-r from-blue-600 to-teal-600 text-white sticky top-0 z-[10000] shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}

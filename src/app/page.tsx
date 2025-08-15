@@ -1,8 +1,6 @@
 'use client';
 
-import MarketingHeader from './components/MarketingHeader';
 import EmergencyCTASection from './components/home/EmergencyCTASection';
-import ProcessSection from './components/home/ProcessSection';
 import ResourcesSection from './components/home/ResourcesSection';
 import RequestFormSection from './components/home/RequestFormSection';
 import ServicesSection from './components/home/ServicesSection';
@@ -10,8 +8,6 @@ import ServicesSection from './components/home/ServicesSection';
 export default function Home() {
   return (
     <>
-  <MarketingHeader />
-
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Hero Video Background */}
@@ -48,7 +44,7 @@ export default function Home() {
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 sm:mb-8">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 sm:mb-8 font-tan-headline">
                   <span className="bg-gradient-to-r from-cyan-300 via-teal-300 to-lime-300 bg-clip-text text-transparent drop-shadow-2xl">
                     ReefTech Solutions
                   </span>
@@ -101,7 +97,6 @@ export default function Home() {
 
     
 
-  <ProcessSection />
 
   <ResourcesSection />
 

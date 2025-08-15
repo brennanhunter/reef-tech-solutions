@@ -1,19 +1,19 @@
 export default function RequestFormSection() {
   // Restored to original Jobber.com embed section from previous inline implementation
   return (
-    <section id="request-form" className="py-24 bg-gradient-to-br from-teal-600 via-cyan-600 to-lime-500 text-white relative overflow-hidden">
-      {/* Enhanced circuit background */}
-      <div className="absolute inset-0 opacity-20">
+    <section id="request-form" className="py-24 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white relative overflow-hidden">
+      {/* Advanced circuit background */}
+      <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
           <defs>
-            <pattern id="form-circuit" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
-              <path d="M12.5,0 L12.5,12.5 M0,12.5 L25,12.5 M6,6 L19,6 M12.5,3 L12.5,9" stroke="#FFFFFF" strokeWidth="0.6" opacity="0.3"/>
-              <path d="M6,0 L6,6 M19,6 L19,12.5 M3,9 L9,9 M16,9 L22,9" stroke="#FFFFFF" strokeWidth="0.4" opacity="0.2"/>
-              <circle cx="12.5" cy="12.5" r="1" fill="#FFFFFF" opacity="0.4">
-                <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+            <pattern id="form-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M10,0 L10,10 M0,10 L20,10 M5,5 L15,5" stroke="#00CED1" strokeWidth="0.4" opacity="0.6"/>
+              <path d="M5,0 L5,5 M15,5 L15,10" stroke="#32CD32" strokeWidth="0.3" opacity="0.5"/>
+              <circle cx="10" cy="10" r="0.8" fill="#00CED1" opacity="0.7">
+                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
               </circle>
-              <circle cx="6" cy="6" r="0.7" fill="#FFFFFF" opacity="0.3">
-                <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2.5s" repeatCount="indefinite"/>
+              <circle cx="5" cy="5" r="0.5" fill="#32CD32" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite"/>
               </circle>
             </pattern>
           </defs>
@@ -60,7 +60,21 @@ export default function RequestFormSection() {
           />
         </div>
         {/* Call to action below form */}
-        
+        <div className="flex justify-end mt-12 max-w-6xl mx-auto">
+          <a 
+            href="https://joeywallet.xyz" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:scale-105 transition-transform duration-300"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/photos/joey-wallet.png" 
+              alt="Joey Wallet" 
+              className="w-24 h-24 rounded-lg hover:opacity-80 transition-opacity duration-300"
+            />
+          </a>
+        </div>
       </div>
     </section>
   );

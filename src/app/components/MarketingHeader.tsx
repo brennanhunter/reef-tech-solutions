@@ -44,8 +44,6 @@ export default function MarketingHeader() {
 
 const navLinks = [
   { href: '#services', label: 'Services' },
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
   { href: '#resources', label: 'Resources' },
 ];
 

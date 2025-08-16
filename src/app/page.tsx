@@ -8,6 +8,7 @@ import FAQSchema from './components/SEO/FAQSchema';
 import ServiceSchema from './components/SEO/ServiceSchema';
 import LocationSchema from './components/SEO/LocationSchema';
 import LocationKeywords from './components/SEO/LocationKeywords';
+import GoogleBusinessSchema from './components/SEO/GoogleBusinessSchema';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ServiceSchema />
       <LocationSchema />
       <LocationKeywords />
+      <GoogleBusinessSchema />
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Hero Video Background */}

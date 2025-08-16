@@ -4,10 +4,18 @@ import EmergencyCTASection from './components/home/EmergencyCTASection';
 import ResourcesSection from './components/home/ResourcesSection';
 import RequestFormSection from './components/home/RequestFormSection';
 import ServicesSection from './components/home/ServicesSection';
+import FAQSchema from './components/SEO/FAQSchema';
+import ServiceSchema from './components/SEO/ServiceSchema';
+import LocationSchema from './components/SEO/LocationSchema';
+import LocationKeywords from './components/SEO/LocationKeywords';
 
 export default function Home() {
   return (
     <>
+      <FAQSchema />
+      <ServiceSchema />
+      <LocationSchema />
+      <LocationKeywords />
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Hero Video Background */}

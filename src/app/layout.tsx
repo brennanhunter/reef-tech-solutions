@@ -44,12 +44,30 @@ export const metadata: Metadata = {
     "smart home installation Kona",
     "property management technology Hawaii",
     
-    // Location-specific
+    // Location-specific Primary
+    "sauna maintenance big island",
+    "smart home waimea",
+    "smart home kamuela",
+    "vacation rental automation kona",
+    "pool automation hilo",
+    "smart locks big island",
+    "home automation waimea",
+    "building technology captain cook",
+    "electrical services volcano hawaii",
+    
+    // Location + Service Combinations
     "Kailua-Kona smart home",
     "Big Island electrical contractor",
     "Hawaii tech support",
     "Waimea smart home services",
     "Hilo home automation",
+    "Captain Cook smart locks",
+    "Volcano home technology",
+    "Kamuela building automation",
+    "Kona vacation rental automation",
+    "Big Island sauna repair",
+    "Hawaii spa automation",
+    "Waimea smart security",
     
     // Industry-specific
     "vacation rental check-in automation",
@@ -59,7 +77,11 @@ export const metadata: Metadata = {
     "home security systems Hawaii",
     "smart thermostat installation",
     "automated pool systems",
-    "smart lighting Hawaii"
+    "smart lighting Hawaii",
+    "maglock installation big island",
+    "automatic door hardware hawaii",
+    "access control systems kona",
+    "property tech solutions hawaii"
   ],
   authors: [{ name: "ReefTech Solutions", url: "https://reeftechsolutions.com" }],
   creator: "ReefTech Solutions",
@@ -125,7 +147,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   verification: {
-    google: 'your-google-verification-code', // Add when you get Google Search Console set up
+    google: 'google95fe311b9c002ae1', // Google Search Console verification
     yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
     other: {
@@ -140,9 +162,11 @@ export const metadata: Metadata = {
     'geo.position': '19.8968;-155.5828',
     'ICBM': '19.8968, -155.5828',
     'rating': '5',
-    'coverage': 'Hawaii',
+    'coverage': 'Hawaii Big Island Kailua-Kona Waimea Hilo Captain-Cook Volcano Kamuela',
     'distribution': 'Local',
-    'target': 'property managers, vacation rental owners, homeowners, businesses',
+    'target': 'property managers, vacation rental owners, homeowners, businesses, sauna owners, spa operators',
+    'service-areas': 'Kailua-Kona, Waimea, Kamuela, Hilo, Captain Cook, Volcano, Pahoa, Naalehu, Ocean View, Holualoa',
+    'specialties': 'sauna maintenance big island, smart home waimea, vacation rental automation kona, pool automation hawaii',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
     'apple-mobile-web-app-title': 'ReefTech Solutions',

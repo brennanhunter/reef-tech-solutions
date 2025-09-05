@@ -43,7 +43,7 @@ export default function ResourcesSection() {
         </svg>
       </div>
       <div className="container mx-auto px-4 text-center relative z-10 max-w-5xl">
-        <h2 className="text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent">Resources & Guides</h2>
+        <h2 className="text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent font-tan-headline">Resources & Guides</h2>
         <p className="text-xl text-gray-700 font-medium leading-relaxed mb-16 max-w-2xl mx-auto">Empower your decisions with practical insights drawn from real-world electrical service experience.</p>
         <div className="grid md:grid-cols-3 gap-10 mb-16">
           {resources.map(r => (

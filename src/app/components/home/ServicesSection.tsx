@@ -17,7 +17,7 @@ const categories: Category[] = [
 	},
 	{
 		id: 'access-control',
-		title: 'Premium Access Control & Door Hardware',
+		title: 'Access Control & Door Hardware',
 		image: '/photos/services/AccessControl.jpg',
 		brands: [{ name: 'dormakaba' }, { name: 'Von Duprin' }, { name: 'Adams Rite' }, { name: 'Norton Rixson' }],
 		blurb: 'In luxury properties, access control is a critical blend of security, convenience, and seamless design. We partner with industry-leading brands like dormakaba and Adams Rite to create systems that are both highly secure and beautifully integrated. By combining the global security expertise of brands like dormakaba, a leader in electronic access and mobile credentials, with the specialized hardware of Adams Rite for elegant glass and aluminum doors, we deliver solutions that enhance both guest experience and operational efficiency.\n\nOur approach also incorporates the life-safety excellence of Von Duprin, the inventor of the panic device, and the quiet, touchless door automation of Norton Rixson. This multi-brand strategy allows us to design and install a comprehensive access control system that not only meets the highest standards for safety and reliability but also preserves the architectural integrity and sophisticated atmosphere of your property. From a guest\'s first seamless entry using a mobile key to the secure, silent operation of every back-of-house door, we ensure your access control system is as flawless as your property\'s reputation.'
@@ -31,10 +31,10 @@ const categories: Category[] = [
 	},
 	{
 		id: 'sauna',
-		title: 'Premium Sauna & Spa Systems',
+		title: 'Spa & Sauna',
 		image: '/photos/services/Sauna.jpg',
 		brands: [{ name: 'Sunlighten' }, { name: 'Finnleo' }, { name: 'Amerec' }],
-		blurb: 'Professional sauna and spa installations for luxury properties and wellness facilities. We specialize in infrared and traditional sauna systems from leading manufacturers, offering complete installation, maintenance, and repair services. From residential wellness rooms to commercial spa facilities, our expertise ensures optimal performance and guest satisfaction. As one of the few certified specialists on the Big Island, we provide comprehensive service for all major sauna and spa brands, including electrical, plumbing, and control system integration.'
+		blurb: 'Professional sauna installations and spa maintenance for luxury properties and wellness facilities. We specialize in infrared and traditional sauna systems from leading manufacturers, offering complete installation, maintenance, and repair services. From residential wellness rooms to commercial spa facilities, our expertise ensures optimal performance and guest satisfaction. We provide comprehensive service for all major sauna and spa brands, including electrical, plumbing, and control system integration.'
 	},
 	{
 		id: 'rental',
@@ -129,7 +129,7 @@ export default function ServicesSection() {
 			<Modal
 				open={openModal === 'access-control'}
 				onClose={() => setOpenModal(null)}
-				title="Premium Access Control & Door Hardware: The dormakaba, Von Duprin, Adams Rite & Norton Rixson Difference"
+				title="Access Control & Door Hardware: The dormakaba, Von Duprin, Adams Rite & Norton Rixson Difference"
 				labelledBy="access-control-modal-title"
 				id="service-modal-access-control"
 			>
@@ -257,7 +257,7 @@ export default function ServicesSection() {
 			<Modal
 				open={openModal === 'sauna'}
 				onClose={() => setOpenModal(null)}
-				title="Premium Sauna & Spa Systems: Professional Wellness Solutions"
+				title="Spa and Sauna: Professional Wellness Solutions"
 				labelledBy="sauna-modal-title"
 				id="service-modal-sauna"
 			>
@@ -278,7 +278,7 @@ export default function ServicesSection() {
 						</div>
 					</div>
 
-					<p>Creating the perfect wellness environment requires expertise in both traditional and modern sauna technologies. As one of the few certified sauna specialists on Hawaii&apos;s Big Island, we provide comprehensive installation, maintenance, and repair services for luxury residential and commercial spa facilities.</p>
+					<p>Creating the perfect wellness environment requires expertise in both traditional and modern sauna technologies. We provide comprehensive installation, maintenance, and repair services for luxury residential and commercial spa facilities.</p>
 
 					<div className="space-y-5">
 						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Infrared Wellness Technology</h3>
@@ -300,7 +300,7 @@ export default function ServicesSection() {
 							<li><strong>Electric and Gas Heater Systems:</strong> Professional installation and maintenance of commercial-grade sauna heaters with proper electrical connections, safety controls, and temperature management systems. We work with leading manufacturers to ensure reliable operation.</li>
 							<li><strong>Steam Generator Integration:</strong> Complete steam room systems including generators, distribution piping, and control systems. Our installations include proper drainage, ventilation, and safety features required for commercial and residential applications.</li>
 							<li><strong>Ventilation and Climate Control:</strong> Critical ventilation design ensures proper air circulation, moisture management, and temperature control. We design and install ventilation systems that maintain optimal conditions while preventing moisture damage.</li>
-							<li><strong>Maintenance and Repair Services:</strong> As one of the few certified specialists on the Big Island, we provide ongoing maintenance, troubleshooting, and repair services for all major sauna and spa brands, ensuring your investment continues to perform reliably.</li>
+							<li><strong>Maintenance and Repair Services:</strong> We provide ongoing maintenance, troubleshooting, and repair services for all major sauna and spa brands, ensuring your investment continues to perform reliably.</li>
 						</ul>
 						<p>Whether you&apos;re installing a new wellness facility or maintaining existing sauna systems, our specialized expertise ensures safe, efficient operation and guest satisfaction for years to come.</p>
 					</div>
@@ -368,10 +368,10 @@ function HeaderIntro() {
 	return (
 		<div className="max-w-4xl mx-auto text-center mb-24">
 			<h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-				<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">ReefTech Service Spectrum</span>
+				<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent font-tan-headline">ReefTech Services</span>
 			</h2>
 			<p className="text-xl md:text-2xl text-white leading-relaxed">
-ReefTech provides comprehensive building technology solutions for Hawaii&apos;s property managers. We handle everything from Access Control to Emergency Service. Our integrated approach eliminates the need for multiple contractors, streamlining operations and reducing costs for multi-property management companies across the Big Island.			</p>
+ReefTech provides comprehensive solutions for Hawaii&apos;s property managers. We handle everything from Access Control to Emergency Service. Our integrated approach eliminates the need for multiple contractors, streamlining operations and reducing costs for multi-property management companies across the Big Island.			</p>
 		</div>
 	);
 }

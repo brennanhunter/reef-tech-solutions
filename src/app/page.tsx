@@ -60,14 +60,10 @@ export default function Home() {
                   </span>
                 </h1>
 
-                {/* Tagline */}
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light mb-8 sm:mb-12 text-cyan-100 leading-relaxed">
-                  Your Property&apos;s Tech Department
-                </p>
 
                 {/* Sub-description */}
                 <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-200 mb-8 sm:mb-12">
-                  Smart home integration, vacation rental automation, and advanced technology solutions for Hawaii&apos;s Big Island.</p>
+                  Maintenance Department and Technical Support. </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

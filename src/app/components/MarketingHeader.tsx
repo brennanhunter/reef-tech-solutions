@@ -11,7 +11,7 @@ export default function MarketingHeader() {
           <div className="flex items-center space-x-4">
             <img src="/photos/logo.png" alt="ReefTech Solutions Logo" className="h-12 w-auto" style={{ filter: 'drop-shadow(0 0 10px rgba(0, 206, 209, 0.3))' }} />
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold"><span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">ReefTech Solutions</span></h1>
+              <h1 className="text-2xl font-bold"><span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent font-tan-headline">ReefTech Solutions</span></h1>
               <p className="text-sm text-gray-600 font-medium">Your Property&apos;s Tech Department</p>
             </div>
           </div>

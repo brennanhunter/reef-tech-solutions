@@ -10,17 +10,17 @@ interface Category { id: string; title: string; brands?: Brand[]; products?: Pro
 const categories: Category[] = [
 	{
 		id: 'lighting',
-		title: 'Premium Electrical & Lighting Services',
+		title: 'Electrical & Lighting Services',
 		image: '/photos/services/Lighting.jpg',
 		brands: [{ name: 'Leviton' }, { name: 'Lutron' }],
-		blurb: 'For the demanding environment of luxury properties, you need electrical work that is both flawless and durable. We use only premium-grade components from respected brands, such as Leviton, known for their reliability and long-lasting performance. We also specialize in implementing advanced lighting and automation solutions from Lutron, a global leader in high-end control systems.\n\nBy combining the trusted durability of brands like Leviton with the sophisticated controls and automation of Lutron, we ensure that every upgrade, from switches and outlets to intelligent lighting and automated shades, is safe, reliable, and a perfect match for your property\'s quality standards. Whether we\'re performing routine maintenance or installing a complete, energy-efficient system, our work is designed to enhance both the guest experience and your operational efficiency, all while preserving the integrity of your property\'s luxurious design.'
+		blurb: 'For the demanding environment of luxury properties, you need electrical work that is both flawless and durable. We use only premium-grade components from respected brands, such as Leviton, known for their reliability and long-lasting performance. We also specialize in implementing advanced lighting and automation solutions from Lutron, a global leader in high-end control systems.\n\nBy combining the trusted durability of brands like Leviton with the sophisticated controls and automation of Lutron, we ensure that every upgrade, from switches and outlets to intelligent lighting and automated shades, is safe, reliable, and a perfect match for your property\'s quality standards.'
 	},
 	{
 		id: 'access-control',
 		title: 'Access Control & Door Hardware',
 		image: '/photos/services/AccessControl.jpg',
-		brands: [{ name: 'dormakaba' }, { name: 'Von Duprin' }, { name: 'Adams Rite' }, { name: 'Norton Rixson' }],
-		blurb: 'In luxury properties, access control is a critical blend of security, convenience, and seamless design. We partner with industry-leading brands like dormakaba and Adams Rite to create systems that are both highly secure and beautifully integrated. By combining the global security expertise of brands like dormakaba, a leader in electronic access and mobile credentials, with the specialized hardware of Adams Rite for elegant glass and aluminum doors, we deliver solutions that enhance both guest experience and operational efficiency.\n\nOur approach also incorporates the life-safety excellence of Von Duprin, the inventor of the panic device, and the quiet, touchless door automation of Norton Rixson. This multi-brand strategy allows us to design and install a comprehensive access control system that not only meets the highest standards for safety and reliability but also preserves the architectural integrity and sophisticated atmosphere of your property. From a guest\'s first seamless entry using a mobile key to the secure, silent operation of every back-of-house door, we ensure your access control system is as flawless as your property\'s reputation.'
+		brands: [{ name: 'Dormakaba' }, { name: 'Von Duprin' }, { name: 'Adams Rite' }, { name: 'Norton Rixson' }],
+		blurb: 'Access control is a critical blend of security, convenience, and seamless design. We partner with industry-leading brands like Dormakaba and Adams Rite to create systems that are both highly secure and beautifully integrated. By combining the global security expertise of brands like Dormakaba, a leader in electronic access and mobile credentials, with the specialized hardware of Adams Rite for elegant glass and aluminum doors, we deliver solutions that enhance both guest experience and operational efficiency.\n\nOur approach also incorporates the life-safety excellence of Von Duprin, the inventor of the panic device, and the quiet, touchless door automation of Norton Rixson. This multi-brand strategy allows us to design and install a comprehensive access control system that not only meets the highest standards for safety and reliability but also preserves the architectural integrity and sophisticated atmosphere of your property. From a guest\'s first seamless entry using a mobile key to the secure, silent operation of every back-of-house door, we ensure your access control system is as flawless as your property\'s reputation.'
 	},
 	{
 		id: 'maglocks',
@@ -80,7 +80,7 @@ export default function ServicesSection() {
 			<Modal
 				open={openModal === 'lighting'}
 				onClose={() => setOpenModal(null)}
-				title="Premium Electrical & Lighting Solutions: The Leviton & Lutron Difference"
+				title="Electrical & Lighting Solutions: The Leviton & Lutron Difference"
 				labelledBy="lighting-modal-title"
 				id="service-modal-lighting"
 			>
@@ -118,7 +118,6 @@ export default function ServicesSection() {
 						<ul className="list-disc pl-5 space-y-4">
 							<li><strong>Personalized Ambiance:</strong> With Lutron&apos;s myRoom system, guests can create the perfect lighting scene in their room with a single touch. We also install Ketra lighting, which provides a full spectrum of tunable white light and vibrant colors, simulating natural daylight to enhance guest well-being.</li>
 							<li><strong>Effortless Control:</strong> Lutron&apos;s elegant controls, like the Palladiom keypad, are both beautiful and intuitive. Guests can adjust lights and automated shades from an elegant wall-mounted controller, or via a simple mobile interface, making their stay seamless and comfortable.</li>
-							<li><strong>Energy and Operational Efficiency:</strong> Lutron systems can be tied into your property management system (PMS) and other building controls. This allows for automated actions, such as lights and shades adjusting when a room becomes vacant, which dramatically reduces energy costs and simplifies operations for your staff.</li>
 							<li><strong>Seamless Design Integration:</strong> Lutron&apos;s products are renowned for their silent operation and minimalist design. Whether it’s a silent automated shade or a perfectly flush-mounted keypad, every component is installed to blend seamlessly with your property&apos;s architectural and interior design.</li>
 						</ul>
 					</div>
@@ -129,7 +128,7 @@ export default function ServicesSection() {
 			<Modal
 				open={openModal === 'access-control'}
 				onClose={() => setOpenModal(null)}
-				title="Access Control & Door Hardware: The dormakaba, Von Duprin, Adams Rite & Norton Rixson Difference"
+				title="Access Control & Door Hardware: The Dormakaba, Von Duprin, Adams Rite & Norton Rixson Difference"
 				labelledBy="access-control-modal-title"
 				id="service-modal-access-control"
 			>
@@ -157,15 +156,15 @@ export default function ServicesSection() {
 					<p>The security of a luxury property should be robust yet discreet. We choose to work with a curated selection of industry-leading brands to ensure your access control and door hardware are not just functional but also elevate the entire guest experience while providing peace of mind for staff and management.</p>
 
 					<div className="space-y-5">
-						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Reliable & Smart Access with dormakaba</h3>
+						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Reliable & Smart Access with Dormakaba</h3>
 						<p>We partner with dormakaba because they are a global leader in providing comprehensive access solutions specifically tailored for hospitality. Their systems are at the forefront of modern access control, integrating physical security with a seamless digital experience.</p>
-						<p className="font-medium text-slate-800">We frequently install dormakaba&apos;s top-tier products, including:</p>
+						<p className="font-medium text-slate-800">We frequently install Dormakaba&apos;s top-tier products, including:</p>
 						<ul className="list-disc pl-5 space-y-4">
-							<li><strong>Mobile Access Solutions:</strong> dormakaba&apos;s systems are the gold standard for mobile keys, seamlessly integrating with platforms like Apple Wallet. This allows guests to check in and access their rooms, elevators, and other common areas with their iPhone or Apple Watch, providing a convenient and modern experience that reflects your property&apos;s luxury standards.</li>
+							<li><strong>Mobile Access Solutions:</strong> Dormakaba&apos;s systems are the gold standard for mobile keys, seamlessly integrating with platforms like Apple Wallet. This allows guests to check in and access their rooms, elevators, and other common areas with their iPhone or Apple Watch, providing a convenient and modern experience that reflects your property&apos;s luxury standards.</li>
 							<li><strong>Quantum Pixel+ & Saffire LX Electronic Locks:</strong> These locks represent the pinnacle of design and technology. The Quantum Pixel+ lock features a minimalist, futuristic aesthetic with hidden electronics, making it blend seamlessly with any high-end décor. The Saffire LX combines sophisticated RFID technology with an understated design. Both offer exceptional reliability and are engineered for quiet operation, ensuring guest comfort is never disturbed.</li>
 							<li><strong>Ambiance Access Management Software:</strong> This powerful software provides comprehensive, real-time control over all access points, including guest rooms, common areas, and back-of-house doors. It integrates with your Property Management System (PMS) to streamline check-in and check-out, and it offers advanced features like energy management, allowing your staff to automate lighting and HVAC based on room occupancy.</li>
 						</ul>
-						<p>By integrating dormakaba&apos;s solutions, we guarantee that your access control system is not only secure but also a key part of a modern, convenient, and energy-efficient guest experience.</p>
+						<p>By integrating Dormakaba&apos;s solutions, we guarantee that your access control system is not only secure but also a key part of a modern, convenient, and energy-efficient guest experience.</p>
 					</div>
 
 					<div className="space-y-5">
@@ -297,7 +296,6 @@ export default function ServicesSection() {
 						<p>Traditional Finnish saunas and steam rooms require specialized knowledge of heating systems, ventilation, and moisture management. Our expertise ensures these systems operate safely and efficiently while providing the authentic sauna experience that guests expect.</p>
 						<p className="font-medium text-slate-800">Our traditional sauna services encompass:</p>
 						<ul className="list-disc pl-5 space-y-4">
-							<li><strong>Electric and Gas Heater Systems:</strong> Professional installation and maintenance of commercial-grade sauna heaters with proper electrical connections, safety controls, and temperature management systems. We work with leading manufacturers to ensure reliable operation.</li>
 							<li><strong>Steam Generator Integration:</strong> Complete steam room systems including generators, distribution piping, and control systems. Our installations include proper drainage, ventilation, and safety features required for commercial and residential applications.</li>
 							<li><strong>Ventilation and Climate Control:</strong> Critical ventilation design ensures proper air circulation, moisture management, and temperature control. We design and install ventilation systems that maintain optimal conditions while preventing moisture damage.</li>
 							<li><strong>Maintenance and Repair Services:</strong> We provide ongoing maintenance, troubleshooting, and repair services for all major sauna and spa brands, ensuring your investment continues to perform reliably.</li>
@@ -442,60 +440,80 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					</div>
 				)}
 				{isAccessControl && (
-					<div className="mt-6 lg:hidden">
-						<div className="relative h-48 overflow-hidden rounded-xl shadow-md group z-[9999]">
+					<div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/von-duprin.jpg" alt="Von Duprin premium door hardware installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
+							<img src="/photos/brand-pictures/access-control-1.png" alt="Access control system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock1.jpg" alt="Access control magnetic lock installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock3.jpg" alt="Access control system overview" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 					</div>
 				)}
 				{isAccessControl && (
-					<div className="hidden lg:block absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
+					<div className="hidden lg:grid grid-cols-3 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/von-duprin.jpg" alt="Von Duprin premium door hardware installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
-							<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
-								{index + 1}
-							</span>
+							<img src="/photos/brand-pictures/access-control-1.png" alt="Access control system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock1.jpg" alt="Access control magnetic lock installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock3.jpg" alt="Access control system overview" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
+							{index + 1}
+						</span>
 					</div>
 				)}
 				{isMaglocks && (
 					<div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock1.jpg" alt="Magnetic lock installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img src="/photos/brand-pictures/mag-lock2.jpg" alt="Magnetic lock hardware detail" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock3.jpg" alt="Magnetic lock system overview" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<img src="/photos/brand-pictures/mag-lock4.jpg" alt="Magnetic lock system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock5.jpg" alt="Magnetic lock security system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 					</div>
 				)}
 				{isMaglocks && (
 					<div className="hidden lg:grid grid-cols-3 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
-						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock1.jpg" alt="Magnetic lock installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img src="/photos/brand-pictures/mag-lock2.jpg" alt="Magnetic lock hardware detail" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
-						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/mag-lock3.jpg" alt="Magnetic lock system overview" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<img src="/photos/brand-pictures/mag-lock4.jpg" alt="Magnetic lock system installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group hover:shadow-xl transition-shadow duration-500 z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/mag-lock5.jpg" alt="Magnetic lock security system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">

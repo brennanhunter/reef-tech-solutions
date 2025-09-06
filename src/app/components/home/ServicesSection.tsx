@@ -393,8 +393,13 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 		>
 			<div className="relative bg-white border border-gray-200 rounded-3xl p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_50px_-10px_rgba(0,0,0,0.4)] transition-shadow overflow-hidden">
 				{isLighting && (
-					<div className="mt-6 grid grid-cols-2 gap-3 lg:hidden">
-						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
+					<div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/light-control1.jpg" alt="Lighting control system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
@@ -403,7 +408,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 								<img src="/photos/brand-icons/leviton-logo.svg" alt="Leviton logo" className="h-3 w-auto" loading="lazy" />
 							</div>
 						</div>
-						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img src="/photos/brand-pictures/lutron-lights.webp" alt="Lutron lighting system" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
@@ -415,7 +420,12 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					</div>
 				)}
 				{isLighting && (
-					<div className="hidden lg:grid grid-cols-2 gap-4 absolute inset-y-6 right-6 w-[400px] xl:w-[460px]">
+					<div className="hidden lg:grid grid-cols-3 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/light-control1.jpg" alt="Lighting control system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img src="/photos/brand-pictures/leviton-lights.webp" alt="Leviton lighting installation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
@@ -573,7 +583,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</span>
 					</div>
 				)}
-				<div className={`relative ${isLighting ? 'lg:pr-[420px] xl:pr-[500px]' : isSauna || isMaglocks || isRental ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
+				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isSauna || isMaglocks || isRental ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
 					<h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">
 						<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">
 							{category.title}

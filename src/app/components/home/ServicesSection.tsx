@@ -531,37 +531,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</span>
 					</div>
 				)}
-				{isSauna && (
-					<div className="mt-6 grid grid-cols-2 gap-3 lg:hidden">
-						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-						<div className="relative h-32 overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/sauna-1.jpg" alt="Professional sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-					</div>
-				)}
-				{isSauna && (
-					<div className="hidden lg:grid grid-cols-2 gap-4 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
-						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/sauna-1.jpg" alt="Professional sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-						</div>
-						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
-							{index + 1}
-						</span>
-					</div>
-				)}
+
 				{isRental && (
 					<div className="mt-6 lg:hidden">
 						<div className="relative h-48 overflow-hidden rounded-xl shadow-md group z-[9999]">
@@ -583,7 +553,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</span>
 					</div>
 				)}
-				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isSauna || isMaglocks || isRental ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
+				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isMaglocks || isRental ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
 					<h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">
 						<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">
 							{category.title}
@@ -631,6 +601,27 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</button>
 					</div>
 				</div>
+				{isSauna && (
+					<div className="mt-8">
+						<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-pictures/spa-1.jpg" alt="Spa installation and maintenance" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							</div>
+							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							</div>
+							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-pictures/sauna-1.jpg" alt="Professional sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							</div>
+						</div>
+					</div>
+				)}
 				{!isLighting && !isAccessControl && !isMaglocks && !isSauna && !isRental && (
 					<div className="hidden lg:flex w-64 flex-none items-center justify-center">
 						{category.image ? (

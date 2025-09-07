@@ -209,7 +209,7 @@ export default function RootLayout({
                   "https://reeftech.io/photos/og-image.jpg"
                 ],
                 "telephone": "+1-808-303-4627",
-                "email": "info@reeftech.io",
+                "email": "joshua@reeftech.io",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Kailua-Kona",

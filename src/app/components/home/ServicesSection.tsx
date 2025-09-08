@@ -31,10 +31,10 @@ const categories: Category[] = [
 	},
 	{
 		id: 'sauna',
-		title: 'Spa & Sauna',
+		title: 'Pool, Spa & Sauna',
 		image: '/photos/services/Sauna.jpg',
 		brands: [{ name: 'Sunlighten' }, { name: 'Finnleo' }, { name: 'Amerec' }],
-		blurb: 'Professional sauna installations and spa maintenance for luxury properties and wellness facilities. We specialize in infrared and traditional sauna systems from leading manufacturers, offering complete installation, maintenance, and repair services. From residential wellness rooms to commercial spa facilities, our expertise ensures optimal performance and guest satisfaction. We provide comprehensive service for all major sauna and spa brands, including electrical, plumbing, and control system integration.'
+		blurb: 'Professional sauna installations and spa maintenance for luxury properties and wellness facilities. We specialize in infrared and traditional sauna systems from leading manufacturers, offering complete installation, maintenance, and repair services. From residential wellness rooms to commercial spa facilities, our expertise ensures optimal performance and guest satisfaction. We provide comprehensive service for all major sauna and spa brands, including electrical, plumbing, and control systems.'
 	},
 	{
 		id: 'rental',
@@ -292,13 +292,15 @@ export default function ServicesSection() {
 					</div>
 
 					<div className="space-y-5">
-						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Traditional Sauna & Steam Systems</h3>
-						<p>Traditional Finnish saunas and steam rooms require specialized knowledge of heating systems, ventilation, and moisture management. Our expertise ensures these systems operate safely and efficiently while providing the authentic sauna experience that guests expect.</p>
-						<p className="font-medium text-slate-800">Our traditional sauna services encompass:</p>
+						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Maintenance and Repair</h3>
+						<p className="font-medium text-slate-800">Our sauna services encompass:</p>
 						<ul className="list-disc pl-5 space-y-4">
-							<li><strong>Steam Generator Integration:</strong> Complete steam room systems including generators, distribution piping, and control systems. Our installations include proper drainage, ventilation, and safety features required for commercial and residential applications.</li>
-							<li><strong>Ventilation and Climate Control:</strong> Critical ventilation design ensures proper air circulation, moisture management, and temperature control. We design and install ventilation systems that maintain optimal conditions while preventing moisture damage.</li>
-							<li><strong>Maintenance and Repair Services:</strong> We provide ongoing maintenance, troubleshooting, and repair services for all major sauna and spa brands, ensuring your investment continues to perform reliably.</li>
+							<li>
+								<strong>Maintenance Services:</strong> Regular upkeep and tune-ups to keep your sauna and spa running smoothly, preventing costly breakdowns and extending equipment life.
+							</li>
+							<li>
+								<strong>Repair Services:</strong> Fast response for equipment failures, with expert diagnosis and quality parts to get your wellness systems back online quickly.
+							</li>
 						</ul>
 						<p>Whether you&apos;re installing a new wellness facility or maintaining existing sauna systems, our specialized expertise ensures safe, efficient operation and guest satisfaction for years to come.</p>
 					</div>
@@ -533,8 +535,13 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 				)}
 
 				{isRental && (
-					<div className="mt-6 lg:hidden">
-						<div className="relative h-48 overflow-hidden rounded-xl shadow-md group z-[9999]">
+					<div className="mt-6 grid grid-cols-2 gap-2 lg:hidden">
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/spa-1.jpg" alt="Spa installation and maintenance" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
+						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img src="/photos/brand-pictures/vacation-rental.jpg" alt="Smart vacation rental automation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
@@ -542,7 +549,12 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					</div>
 				)}
 				{isRental && (
-					<div className="hidden lg:block absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
+					<div className="hidden lg:grid grid-cols-2 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
+						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
+							{/* eslint-disable-next-line @next/next/no-img-element */}
+							<img src="/photos/brand-pictures/spa-1.jpg" alt="Spa installation and maintenance" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
 							<img src="/photos/brand-pictures/vacation-rental.jpg" alt="Smart vacation rental automation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
@@ -604,11 +616,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 				{isSauna && (
 					<div className="mt-8">
 						<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
-								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/photos/brand-pictures/spa-1.jpg" alt="Spa installation and maintenance" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
-							</div>
+							
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img src="/photos/brand-pictures/Jacuzzi-Hawaii.jpg" alt="Jacuzzi spa installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
@@ -617,6 +625,11 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img src="/photos/brand-pictures/sauna-1.jpg" alt="Professional sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							</div>
+							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/brand-pictures/infra-red-sauna.jpg" alt="Infrared sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							</div>
 						</div>

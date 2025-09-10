@@ -277,7 +277,7 @@ export default function ServicesSection() {
 						</div>
 					</div>
 
-					<p>Creating the perfect wellness environment requires expertise in both traditional and modern sauna technologies. We provide comprehensive installation, maintenance, and repair services for luxury residential and commercial spa facilities.</p>
+					<p>We provide comprehensive installation, maintenance, and repair services for luxury residential and commercial spa facilities.</p>
 
 					<div className="space-y-5">
 						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Infrared Wellness Technology</h3>
@@ -286,8 +286,8 @@ export default function ServicesSection() {
 						<ul className="list-disc pl-5 space-y-4">
 							<li><strong>Full Spectrum Infrared Systems:</strong> Advanced heating technology combining near, mid, and far infrared wavelengths for optimal therapeutic benefits. These systems operate at comfortable temperatures while delivering deep tissue therapy and enhanced recovery benefits.</li>
 							<li><strong>Smart Control Integration:</strong> Modern infrared saunas feature app-based controls, pre-programmed wellness sessions, and integration with home automation systems. We configure these systems for seamless operation and maximum user convenience.</li>
-							<li><strong>Custom Installation Solutions:</strong> From pre-built cabin installations to fully custom built-in designs, we handle electrical integration, ventilation requirements, and smart home connectivity for infrared sauna systems.</li>
-							<li><strong>Health-Focused Features:</strong> Premium infrared systems include chromotherapy lighting, integrated sound systems, and air purification technologies. We ensure all wellness features are properly installed and calibrated for optimal performance.</li>
+							<li><strong>Custom Installation Solutions:</strong> From pre-built cabin installations to fully custom built-in designs, we handle electrical, ventilation requirements, and smart home connectivity for infrared sauna systems.</li>
+							<li><strong>Health-Focused Features:</strong> Premium infrared systems include chromotherapy lighting, integrated sound, and air purification. We ensure all wellness features are properly installed and calibrated for optimal performance.</li>
 						</ul>
 					</div>
 
@@ -352,7 +352,7 @@ export default function ServicesSection() {
 						<p className="font-medium text-slate-800">Our management-focused solutions feature:</p>
 						<ul className="list-disc pl-5 space-y-4">
 							<li><strong>Remote Monitoring and Control:</strong> Comprehensive dashboards that allow you to monitor and control all property systems from anywhere. Check lock status, adjust temperatures, control lighting, and receive alerts for any issues requiring attention.</li>
-							<li><strong>Preventive Maintenance Alerts:</strong> Smart sensors that monitor HVAC performance, water usage, and electrical systems, providing early warning of potential issues before they become costly problems or guest complaints.</li>
+							<li><strong>Preventive Maintenance Alerts:</strong> Smart sensors that monitor HVAC performance, water usage, leak detection, and electrical systems, providing early warning of potential issues before they become costly problems or guest complaints.</li>
 							<li><strong>Energy Management Systems:</strong> Automated systems that reduce energy consumption during vacant periods while ensuring guest comfort during occupancy. These systems typically pay for themselves through utility savings within the first year.</li>
 							<li><strong>Integration with Property Management Software:</strong> Seamless integration with popular platforms like Airbnb, VRBO, and property management systems ensures your automation responds automatically to booking changes, guest communications, and operational schedules.</li>
 						</ul>

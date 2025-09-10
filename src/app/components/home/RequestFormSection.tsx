@@ -60,7 +60,20 @@ export default function RequestFormSection() {
           />
         </div>
         {/* Call to action below form */}
-        <div className="flex justify-end mt-12 max-w-6xl mx-auto">
+        <div className="flex justify-end items-center gap-16 sm:gap-20 md:gap-24 lg:gap-28 mt-12 max-w-6xl mx-auto">
+          <a 
+            href="https://banksocial.io" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:scale-105 transition-transform duration-300"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/photos/banksocial-logo.jpg" 
+              alt="Bank Social" 
+              className="w-24 h-24 rounded-lg hover:opacity-80 transition-opacity duration-300"
+            />
+          </a>
           <a 
             href="https://joeywallet.xyz" 
             target="_blank" 

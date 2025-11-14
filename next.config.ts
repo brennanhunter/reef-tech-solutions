@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
               "media-src 'self' data: blob:",
               "font-src 'self'",
               "frame-src 'self' https://clienthub.getjobber.com https://td.doubleclick.net",
-              "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://analytics.google.com https://stats.g.doubleclick.net https://googleads.g.doubleclick.net"
+              "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://analytics.google.com https://stats.g.doubleclick.net https://googleads.g.doubleclick.net https://www.googleadservices.com"
             ].join('; ')
           }
         ]

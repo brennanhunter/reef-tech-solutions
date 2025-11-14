@@ -27,12 +27,16 @@ export default function EmergencyCTASection() {
             <a
               href="tel:+1-808-303-4627"
               className="group bg-white text-orange-700 hover:text-orange-800 px-6 py-4 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 border border-white/60 hover:scale-[1.03]"
+              data-gtm-event="phone_call"
+              data-gtm-location="emergency_section"
             >
               <PhoneIcon /> <span className="whitespace-nowrap">(808) 303-4627</span>
             </a>
             <a
               href="#request-form"
               className="bg-orange-900/20 hover:bg-orange-900/30 text-white px-8 py-4 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30 backdrop-blur-sm hover:scale-[1.03]"
+              data-gtm-event="request_service"
+              data-gtm-location="emergency_section"
             >
               Request Service
             </a>

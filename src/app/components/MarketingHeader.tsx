@@ -17,7 +17,13 @@ export default function MarketingHeader() {
           </div>
           <nav className="hidden lg:flex items-center space-x-6">
             {navLinks.map(l => <a key={l.href} href={l.href} className="text-gray-700 hover:text-cyan-600 font-medium transition-colors duration-300">{l.label}</a>)}
-            <a href="tel:+1-808-303-4627" className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2" style={{ boxShadow: '0 0 20px rgba(34,197,94,0.3)' }}>
+            <a 
+              href="tel:+1-808-303-4627" 
+              className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2" 
+              style={{ boxShadow: '0 0 20px rgba(34,197,94,0.3)' }}
+              data-gtm-event="phone_call"
+              data-gtm-location="header_desktop"
+            >
               <PhoneIcon /> Call Now
             </a>
             <a href="https://www.facebook.com/reeftechsolutions" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 p-2 transition-all duration-300" title="Follow us on Facebook"><Facebook className="w-5 h-5" /></a>
@@ -30,7 +36,16 @@ export default function MarketingHeader() {
           <div className="lg:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
               {navLinks.map(l => (<a key={l.href} href={l.href} onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-cyan-600 font-medium transition-colors duration-300 py-2">{l.label}</a>))}
-              <a href="tel:+1-808-303-4627" onClick={() => setMobileMenuOpen(false)} className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-center shadow-lg flex items-center justify-center gap-2" style={{ boxShadow: '0 0 20px rgba(34,197,94,0.3)' }}><PhoneIcon /> Call Now: (808) 303-4627</a>
+              <a 
+                href="tel:+1-808-303-4627" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-center shadow-lg flex items-center justify-center gap-2" 
+                style={{ boxShadow: '0 0 20px rgba(34,197,94,0.3)' }}
+                data-gtm-event="phone_call"
+                data-gtm-location="header_mobile"
+              >
+                <PhoneIcon /> Call Now: (808) 303-4627
+              </a>
               <a href="https://www.facebook.com/reeftechsolutions" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center shadow-md flex items-center justify-center gap-2"><Facebook className="w-5 h-5" /> Follow on Facebook</a>
               <a href="https://www.instagram.com/reeftechsolutions/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center shadow-md flex items-center justify-center gap-2"><Instagram className="w-5 h-5" /> Follow on Instagram</a>
               <a href="#request-form" onClick={() => setMobileMenuOpen(false)} className="bg-gradient-to-r from-lime-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:from-lime-400 hover:to-cyan-400 transition-all duration-300 text-center shadow-lg" style={{ boxShadow: '0 0 20px rgba(50,205,50,0.3)' }}>Get Started</a>

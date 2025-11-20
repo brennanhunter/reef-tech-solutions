@@ -37,11 +37,10 @@ const categories: Category[] = [
 		blurb: 'Professional sauna installations and spa maintenance for luxury properties and wellness facilities. We specialize in infrared and traditional sauna systems from leading manufacturers, offering complete installation, maintenance, and repair services. From residential wellness rooms to commercial spa facilities, our expertise ensures optimal performance and guest satisfaction. We provide comprehensive service for all major sauna and spa brands, including electrical, plumbing, and control systems.'
 	},
 	{
-		id: 'rental',
-		title: 'Vacation Rental & Property Management Solutions',
-		image: '/photos/services/VacationRental.jpg',
-		brands: [{ name: 'SmartThings' }, { name: 'Hubitat' }, { name: 'Control4' }],
-		blurb: 'Complete automation ecosystems designed specifically for vacation rental operations and property management efficiency. Our integrated solutions combine smart locks, automated lighting, climate control, and remote monitoring systems to streamline guest experiences while reducing operational overhead. From automated check-in processes to energy management and security monitoring, we create maintenance-friendly installations that maximize revenue potential while minimizing hands-on management requirements.'
+		id: 'plumbing',
+		title: 'Plumbing & Leak Detection',
+		image: '/photos/services/plumbing.png',
+		blurb: 'Professional plumbing services for Big Island residential and commercial properties. Emergency repairs, leak detection, fixture installation, and water heater service. We provide fast, reliable plumbing solutions to protect your property from water damage.'
 	}
 ];
 
@@ -307,56 +306,31 @@ export default function ServicesSection() {
 				</div>
 			</Modal>
 
-			{/* Vacation Rental & Property Management Modal */}
+			{/* Plumbing & Leak Detection Modal */}
 			<Modal
-				open={openModal === 'rental'}
+				open={openModal === 'plumbing'}
 				onClose={() => setOpenModal(null)}
-				title="Vacation Rental & Property Management Solutions: Smart Automation for Maximum Efficiency"
-				labelledBy="rental-modal-title"
-				id="service-modal-rental"
+				title="Plumbing & Leak Detection Services"
+				labelledBy="plumbing-modal-title"
+				id="service-modal-plumbing"
 			>
-				<div className="space-y-10 text-slate-700">
-					{/* Brand Icons Row */}
-					<div className="flex items-center gap-6 pt-1">
-						<div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm ring-1 ring-slate-200/70">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-icons/smartthings-logo.svg" alt="SmartThings" className="h-5 w-auto" />
-						</div>
-						<div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm ring-1 ring-slate-200/70">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-icons/hubitat-logo.svg" alt="Hubitat" className="h-5 w-auto" />
-						</div>
-						<div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm ring-1 ring-slate-200/70">
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-icons/control4-logo.svg" alt="Control4" className="h-5 w-auto" />
-						</div>
-					</div>
+				<div className="space-y-6 text-slate-700">
+					<p className="text-lg">Professional plumbing services for Hawaii properties. Fast, reliable solutions for all your plumbing needs.</p>
 
-					<p>Modern vacation rental success depends on seamless automation that enhances guest experiences while minimizing operational overhead. We design and install comprehensive smart home ecosystems specifically tailored for property management efficiency, guest satisfaction, and revenue optimization.</p>
-
-					<div className="space-y-5">
-						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Automated Guest Experience Systems</h3>
-						<p>The guest experience begins before arrival and continues throughout their stay. Our automation systems create seamless, contactless experiences that guests love while reducing your workload and operational costs.</p>
-						<p className="font-medium text-slate-800">Our guest-focused automation includes:</p>
-						<ul className="list-disc pl-5 space-y-4">
-							<li><strong>Smart Check-In Automation:</strong> Automated door lock codes that activate at check-in time and deactivate at checkout, integrated with your property management system. Guests receive their unique access codes automatically, eliminating key exchanges and reducing contact points.</li>
-							<li><strong>Welcome Lighting Scenes:</strong> Automated lighting that creates a warm welcome when guests arrive and adjusts throughout their stay. Energy-efficient scheduling ensures lights are only on when needed, reducing utility costs while maintaining the perfect ambiance.</li>
-							<li><strong>Climate Control Optimization:</strong> Smart thermostats that automatically adjust temperature based on occupancy, arrival times, and guest preferences. Pre-cooling or pre-heating before guest arrival ensures comfort while minimizing energy waste during vacant periods.</li>
-							<li><strong>Security and Monitoring:</strong> Discreet security cameras for common areas, smart doorbells for guest communication, and occupancy monitoring to ensure property protection while respecting guest privacy.</li>
+					<div className="space-y-4">
+						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Our Plumbing Services</h3>
+						<ul className="list-disc pl-5 space-y-3">
+							<li><strong>Emergency Plumbing Repairs:</strong> 24/7 service for burst pipes, major leaks, and urgent plumbing issues</li>
+							<li><strong>Leak Detection & Repair:</strong> Advanced leak detection technology and professional repair services</li>
+							<li><strong>Fixture Installation:</strong> Installation and replacement of faucets, sinks, toilets, and showers</li>
+							<li><strong>Water Heater Service:</strong> Installation, repair, and maintenance of water heating systems</li>
+							<li><strong>Pipe Repair & Replacement:</strong> Expert diagnosis and repair of damaged or aging pipes</li>
+							<li><strong>Drain Cleaning:</strong> Professional drain clearing and maintenance services</li>
 						</ul>
 					</div>
 
-					<div className="space-y-5">
-						<h3 className="text-xl font-semibold tracking-tight text-slate-800">Property Management and Operational Efficiency</h3>
-						<p>Behind the scenes, our automation systems provide property managers with powerful tools to monitor, control, and optimize their operations remotely. These systems reduce maintenance calls, prevent costly issues, and provide valuable insights for business optimization.</p>
-						<p className="font-medium text-slate-800">Our management-focused solutions feature:</p>
-						<ul className="list-disc pl-5 space-y-4">
-							<li><strong>Remote Monitoring and Control:</strong> Comprehensive dashboards that allow you to monitor and control all property systems from anywhere. Check lock status, adjust temperatures, control lighting, and receive alerts for any issues requiring attention.</li>
-							<li><strong>Preventive Maintenance Alerts:</strong> Smart sensors that monitor HVAC performance, water usage, leak detection, and electrical systems, providing early warning of potential issues before they become costly problems or guest complaints.</li>
-							<li><strong>Energy Management Systems:</strong> Automated systems that reduce energy consumption during vacant periods while ensuring guest comfort during occupancy. These systems typically pay for themselves through utility savings within the first year.</li>
-							<li><strong>Integration with Property Management Software:</strong> Seamless integration with popular platforms like Airbnb, VRBO, and property management systems ensures your automation responds automatically to booking changes, guest communications, and operational schedules.</li>
-						</ul>
-						<p>Whether you&apos;re managing a single vacation rental or a portfolio of properties, our automation solutions are designed to scale with your business while providing the reliability and guest satisfaction that drives positive reviews and repeat bookings.</p>
+					<div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+						<p className="text-slate-800"><strong>Serving Big Island Hawaii:</strong> Kailua-Kona, Waikoloa, Kamuela, Hilo, and surrounding areas</p>
 					</div>
 				</div>
 			</Modal>
@@ -383,9 +357,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 	const isAccessControl = category.id === 'access-control';
 	const isMaglocks = category.id === 'maglocks';
 	const isSauna = category.id === 'sauna';
-	const isRental = category.id === 'rental';
-
-	return (
+				const isPlumbing = category.id === 'plumbing';	return (
 		<motion.div
 			ref={ref}
 			initial={{ opacity: 0, y: 40 }}
@@ -534,30 +506,30 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 					</div>
 				)}
 
-				{isRental && (
+				{isPlumbing && (
 					<div className="mt-6 grid grid-cols-2 gap-2 lg:hidden">
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/spa-1.jpg" alt="Spa installation and maintenance" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<img src="/photos/services/plumbing.png" alt="Professional plumbing services" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-24 overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/vacation-rental.jpg" alt="Smart vacation rental automation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<img src="/photos/services/leak.png" alt="Smart leak detection system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 					</div>
 				)}
-				{isRental && (
+				{isPlumbing && (
 					<div className="hidden lg:grid grid-cols-2 gap-3 absolute inset-y-6 right-6 w-[500px] xl:w-[580px]">
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/spa-1.jpg" alt="Spa installation and maintenance" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<img src="/photos/services/plumbing.png" alt="Professional plumbing services" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<div className="relative h-full overflow-hidden rounded-xl shadow-md group z-[9999]">
 							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img src="/photos/brand-pictures/vacation-rental.jpg" alt="Smart vacation rental automation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+							<img src="/photos/services/leak.png" alt="Smart leak detection system" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 							<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 						</div>
 						<span className="absolute -bottom-5 left-0 ml-1 text-[11px] tracking-wide font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm shadow">
@@ -565,7 +537,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</span>
 					</div>
 				)}
-				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isMaglocks || isRental ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
+				<div className={`relative ${isLighting ? 'lg:pr-[520px] xl:pr-[600px]' : isMaglocks || isPlumbing ? 'lg:pr-[520px] xl:pr-[600px]' : isAccessControl ? 'lg:pr-[520px] xl:pr-[600px]' : ''}`}>
 					<h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">
 						<span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-lime-500 bg-clip-text text-transparent">
 							{category.title}
@@ -635,7 +607,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 						</div>
 					</div>
 				)}
-				{!isLighting && !isAccessControl && !isMaglocks && !isSauna && !isRental && (
+						{!isLighting && !isAccessControl && !isMaglocks && !isSauna && !isPlumbing && (
 					<div className="hidden lg:flex w-64 flex-none items-center justify-center">
 						{category.image ? (
 							<div className="relative w-full h-48 overflow-hidden rounded-2xl shadow-lg group">

@@ -63,7 +63,31 @@ export default function Home() {
 
                 {/* Sub-description */}
                 <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-200 mb-8 sm:mb-12">
-                  Maintenance Department and Technical Support. </p>
+                  Your One-Stop Shop for All Property Repairs & Maintenance
+                </p>
+
+                {/* Services List */}
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 mb-8 sm:mb-12 text-sm sm:text-base md:text-lg lg:text-xl max-w-5xl mx-auto">
+                  <span className="font-semibold text-gray-200 hover:text-cyan-300 hover:scale-110 transition-all duration-300 cursor-default">Plumbing</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-lime-300 hover:scale-110 transition-all duration-300 cursor-default">Electrical</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-orange-300 hover:scale-110 transition-all duration-300 cursor-default">Fire Alarms</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-yellow-300 hover:scale-110 transition-all duration-300 cursor-default">Lighting</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-teal-300 hover:scale-110 transition-all duration-300 cursor-default">Lock Installation</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-blue-300 hover:scale-110 transition-all duration-300 cursor-default">Lockout Service</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-pink-300 hover:scale-110 transition-all duration-300 cursor-default">Sauna Repair</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-purple-300 hover:scale-110 transition-all duration-300 cursor-default">Spa Service</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-amber-300 hover:scale-110 transition-all duration-300 cursor-default">Carpentry</span>
+                  <span className="text-cyan-400">•</span>
+                  <span className="font-semibold text-gray-200 hover:text-green-300 hover:scale-110 transition-all duration-300 cursor-default">General Repairs</span>
+                </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

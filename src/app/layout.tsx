@@ -25,63 +25,65 @@ const tanHeadline = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "ReefTech Solutions - Your Property's Complete Tech Department | Hawaii Smart Home Experts",
-    template: "%s | ReefTech Solutions - Hawaii Smart Home Integration"
+    default: "ReefTech Solutions - Property Maintenance & Repair Services | Big Island Hawaii",
+    template: "%s | ReefTech Solutions - Hawaii Property Services"
   },
-  description: "Professional smart home integration and building technology solutions for Hawaii's Big Island. From smart locks to saunas - we handle your entire property technology stack. Vacation rental automation, sauna maintenance, and comprehensive tech support.",
+  description: "Professional property maintenance and repair services for Hawaii's Big Island. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance. Fast, reliable service for residential and commercial properties in Kona, Waimea, and Hilo.",
   keywords: [
     // Primary Keywords
-    "smart home Hawaii",
-    "vacation rental automation Hawaii",
-    "Big Island smart home integration",
-    "Hawaii building technology solutions",
+    "property maintenance Hawaii",
+    "handyman Big Island",
+    "property repair services Hawaii",
+    "maintenance services Kona",
     
     // Service-specific Keywords
-    "smart locks Hawaii",
-    "pool automation Big Island",
-    "sauna maintenance Hawaii",
-    "vacation rental tech solutions",
-    "smart home installation Kona",
-    "property management technology Hawaii",
+    "plumbing repairs Hawaii",
+    "electrical repairs Big Island",
+    "sauna repair Hawaii",
+    "lock installation Hawaii",
+    "lockout service Kona",
+    "emergency plumbing Hawaii",
+    "carpentry services Big Island",
+    "general repairs Hawaii",
     
     // Location-specific Primary
-    "sauna maintenance big island",
-    "smart home waimea",
-    "smart home kamuela",
-    "vacation rental automation kona",
-    "pool automation hilo",
-    "smart locks big island",
-    "home automation waimea",
-    "building technology captain cook",
-    "electrical services volcano hawaii",
+    "handyman Kailua-Kona",
+    "property maintenance Waimea",
+    "repair services Hilo",
+    "handyman Kamuela",
+    "plumber Big Island",
+    "electrician Kona",
+    "sauna repair Big Island",
+    "maintenance Waimea",
+    "property repair Captain Cook",
     
     // Location + Service Combinations
-    "Kailua-Kona smart home",
-    "Big Island electrical contractor",
-    "Hawaii tech support",
-    "Waimea smart home services",
-    "Hilo home automation",
-    "Captain Cook smart locks",
-    "Volcano home technology",
-    "Kamuela building automation",
-    "Kona vacation rental automation",
-    "Big Island sauna repair",
-    "Hawaii spa automation",
-    "Waimea smart security",
+    "emergency repairs Kona",
+    "Big Island plumber",
+    "electrician Waimea Hawaii",
+    "property maintenance Hilo",
+    "handyman services Kamuela",
+    "lock service Big Island",
+    "sauna maintenance Kona",
+    "spa repair Hawaii",
+    "fire alarm installation Big Island",
+    "lighting repair Hawaii",
+    "door repair Kona",
+    "emergency locksmith Big Island",
     
     // Industry-specific
-    "vacation rental check-in automation",
-    "smart spa systems Hawaii",
-    "building automation Hawaii",
-    "IoT solutions Big Island",
-    "home security systems Hawaii",
-    "smart thermostat installation",
-    "automated pool systems",
-    "smart lighting Hawaii",
-    "maglock installation big island",
-    "automatic door hardware hawaii",
-    "access control systems kona",
-    "property tech solutions hawaii"
+    "residential maintenance Hawaii",
+    "commercial property maintenance",
+    "vacation rental repairs",
+    "property management repairs Hawaii",
+    "emergency repair services",
+    "licensed electrician Hawaii",
+    "licensed plumber Big Island",
+    "general contractor Kona",
+    "home repair services Hawaii",
+    "fixture installation Big Island",
+    "leak detection Hawaii",
+    "water heater repair Kona"
   ],
   authors: [{ name: "ReefTech Solutions", url: "https://reeftechsolutions.com" }],
   creator: "ReefTech Solutions",
@@ -102,8 +104,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ReefTech Solutions - Your Property's Complete Tech Department",
-    description: "Professional smart home integration and building technology solutions for Hawaii's Big Island. From smart locks to saunas - we handle your entire property technology stack.",
+    title: "ReefTech Solutions - Property Maintenance & Repair Services",
+    description: "Professional property maintenance and repair services for Hawaii's Big Island. Plumbing, electrical, carpentry, sauna repair, and general maintenance. Fast, reliable service.",
     url: 'https://reeftech.io',
     siteName: 'ReefTech Solutions',
     images: [
@@ -125,8 +127,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@reeftechsolutions',
     creator: '@reeftechsolutions',
-    title: "ReefTech Solutions - Hawaii's Smart Home Experts",
-    description: "Your Property's Complete Tech Department. Smart home integration, vacation rental automation, and building technology solutions in Hawaii.",
+    title: "ReefTech Solutions - Hawaii Property Maintenance & Repair",
+    description: "Professional property maintenance and repair services. Plumbing, electrical, carpentry, sauna repair, and general maintenance for Big Island properties.",
     images: {
       url: '/photos/og-image.jpg',
       alt: 'ReefTech Solutions - Smart Home Integration Hawaii',
@@ -154,8 +156,8 @@ export const metadata: Metadata = {
       'msvalidate.01': 'your-bing-verification-code',
     },
   },
-  category: 'Smart Home Technology',
-  classification: 'Professional Smart Home Integration Services',
+  category: 'Property Maintenance & Repair',
+  classification: 'Professional Property Maintenance and Repair Services',
   other: {
     'geo.region': 'US-HI',
     'geo.placename': 'Big Island, Hawaii',
@@ -164,9 +166,9 @@ export const metadata: Metadata = {
     'rating': '5',
     'coverage': 'Hawaii Big Island Kailua-Kona Waimea Hilo Captain-Cook Volcano Kamuela',
     'distribution': 'Local',
-    'target': 'property managers, vacation rental owners, homeowners, businesses, sauna owners, spa operators',
+    'target': 'property managers, vacation rental owners, homeowners, businesses, commercial properties',
     'service-areas': 'Kailua-Kona, Waimea, Kamuela, Hilo, Captain Cook, Volcano, Pahoa, Naalehu, Ocean View, Holualoa',
-    'specialties': 'sauna maintenance big island, smart home waimea, vacation rental automation kona, pool automation hawaii',
+    'specialties': 'plumbing repairs, electrical services, sauna repair, lock installation, emergency repairs, general maintenance',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
     'apple-mobile-web-app-title': 'ReefTech Solutions',
@@ -211,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "@id": "https://reeftech.io/#organization",
                 "name": "ReefTech Solutions",
                 "alternateName": "ReefTech",
-                "description": "Your Property's Complete Tech Department. Professional smart home integration and automation services for Hawaii vacation rentals and luxury properties.",
+                "description": "Professional property maintenance and repair services for Hawaii properties. Plumbing, electrical, carpentry, sauna repair, lock service, and general maintenance for residential and commercial properties.",
                 "url": "https://reeftech.io",
                 "logo": "https://reeftech.io/photos/logo.png",
                 "image": [
@@ -268,14 +270,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ],
                 "hasOfferCatalog": {
                   "@type": "OfferCatalog",
-                  "name": "Smart Home & Building Technology Services",
+                  "name": "Property Maintenance & Repair Services",
                   "itemListElement": [
                     {
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Smart Home Integration",
-                        "description": "Complete home automation systems with app control, voice integration, and smart device coordination",
+                        "name": "Plumbing Services",
+                        "description": "Emergency plumbing repairs, leak detection, fixture installation, water heater service, and drain cleaning",
                         "provider": {
                           "@id": "https://reeftech.io/#organization"
                         }
@@ -285,8 +287,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       "@type": "Offer", 
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Vacation Rental Automation",
-                        "description": "Smart locks, automated check-in systems, remote monitoring, and guest management technology",
+                        "name": "Electrical Services",
+                        "description": "Electrical repairs, lighting installation, fixture replacement, troubleshooting, and emergency electrical service",
                         "provider": {
                           "@id": "https://reeftech.io/#organization"
                         }
@@ -296,8 +298,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service", 
-                        "name": "Pool & Spa Automation",
-                        "description": "Smart pH monitoring, automated chemical systems, app-controlled pool equipment, and maintenance scheduling",
+                        "name": "Sauna & Spa Repair",
+                        "description": "Professional sauna repair and maintenance, spa service, and wellness system repairs for residential and commercial properties",
                         "provider": {
                           "@id": "https://reeftech.io/#organization"
                         }
@@ -307,8 +309,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       "@type": "Offer",
                       "itemOffered": {
                         "@type": "Service",
-                        "name": "Sauna & Spa Maintenance", 
-                        "description": "Specialized sauna repair, smart spa systems, and maintenance - the only certified specialist on Big Island",
+                        "name": "Lock & Door Services", 
+                        "description": "Lock installation, lockout assistance, door hardware repair, and security solutions",
                         "provider": {
                           "@id": "https://reeftech.io/#organization"
                         }
@@ -352,17 +354,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "https://www.linkedin.com/company/reeftech-solutions"
                 ],
                 "knowsAbout": [
-                  "Smart Home Technology",
-                  "Home Automation",
-                  "Vacation Rental Management",
-                  "Pool Automation",
-                  "Sauna Maintenance",
-                  "Building Technology",
-                  "IoT Systems",
-                  "Smart Locks",
-                  "Security Systems"
+                  "Property Maintenance",
+                  "Plumbing Repairs",
+                  "Electrical Services",
+                  "Sauna Repair",
+                  "Lock Installation",
+                  "Carpentry",
+                  "General Repairs",
+                  "Emergency Repairs",
+                  "Fire Alarm Installation"
                 ],
-                "slogan": "Your Property's Complete Tech Department"
+                "slogan": "Your One-Stop Shop for All Property Repairs & Maintenance"
               },
               {
                 "@context": "https://schema.org",

@@ -84,8 +84,6 @@ export default function Home() {
                   <span className="text-cyan-400">•</span>
                   <span className="font-semibold text-gray-200 hover:text-purple-300 hover:scale-110 transition-all duration-300 cursor-default">Spa Service</span>
                   <span className="text-cyan-400">•</span>
-                  <span className="font-semibold text-gray-200 hover:text-amber-300 hover:scale-110 transition-all duration-300 cursor-default">Carpentry</span>
-                  <span className="text-cyan-400">•</span>
                   <span className="font-semibold text-gray-200 hover:text-green-300 hover:scale-110 transition-all duration-300 cursor-default">General Repairs</span>
                 </div>
 

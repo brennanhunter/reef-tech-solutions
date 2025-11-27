@@ -37,7 +37,7 @@ User-agent: Baiduspider
 Allow: /
 
 # Local SEO optimization for Hawaii Big Island services:
-# This site provides smart home integration and building technology services
+# This site provides professional property maintenance and repair services
 # Primary service areas: Kailua-Kona, Waimea (Kamuela), Hilo, Captain Cook, Volcano
-# Key services: sauna maintenance, vacation rental automation, smart home integration
-# Target searches: "sauna maintenance big island", "smart home waimea", "vacation rental automation kona"
+# Key services: plumbing repairs, electrical service, sauna repair, lock installation, carpentry, general maintenance
+# Target searches: "handyman big island", "plumber kona", "electrician waimea", "property maintenance hawaii", "emergency repairs big island"

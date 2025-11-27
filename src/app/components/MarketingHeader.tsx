@@ -65,7 +65,8 @@ export default function MarketingHeader() {
                 <ChevronDown className="w-4 h-4" />
               </button>
               {servicesDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-[10001]">
+                <div className="absolute top-full left-0 mt-0 pt-2 w-64 z-[10001]">
+                  <div className="bg-white rounded-lg shadow-xl border border-gray-200 py-2">
                   <Link 
                     href="/plumbing-services" 
                     className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
@@ -90,6 +91,14 @@ export default function MarketingHeader() {
                     <div className="font-semibold">Lock & Locksmith</div>
                     <div className="text-xs text-gray-500">Installation & lockout service</div>
                   </Link>
+                  <Link 
+                    href="/electrical-services" 
+                    className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors duration-200"
+                    onClick={() => setServicesDropdownOpen(false)}
+                  >
+                    <div className="font-semibold">Electrical Services</div>
+                    <div className="text-xs text-gray-500">Licensed electrician</div>
+                  </Link>
                   <div className="border-t border-gray-100 my-1"></div>
                   <button
                     onClick={handleServicesClick}
@@ -97,6 +106,7 @@ export default function MarketingHeader() {
                   >
                     View All Services →
                   </button>
+                  </div>
                 </div>
               )}
             </div>
@@ -157,6 +167,13 @@ export default function MarketingHeader() {
                       className="block text-gray-600 hover:text-cyan-600 py-2"
                     >
                       Lock & Locksmith
+                    </Link>
+                    <Link 
+                      href="/electrical-services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-gray-600 hover:text-cyan-600 py-2"
+                    >
+                      Electrical Services
                     </Link>
                     <button
                       onClick={(e) => {

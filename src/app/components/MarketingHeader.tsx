@@ -97,7 +97,7 @@ export default function MarketingHeader() {
                     onClick={() => setServicesDropdownOpen(false)}
                   >
                     <div className="font-semibold">Electrical Services</div>
-                    <div className="text-xs text-gray-500">Licensed electrician</div>
+                    <div className="text-xs text-gray-500">Minor electrical work</div>
                   </Link>
                   <div className="border-t border-gray-100 my-1"></div>
                   <button

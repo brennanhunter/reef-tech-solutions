@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { Zap, Lightbulb, Cable, ShieldAlert, Clock, Wrench } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Electrical Services Big Island Hawaii | Licensed Electrician | ReefTech Solutions',
-  description: 'Professional electrical services on Big Island Hawaii. Licensed electrician for installations, repairs, troubleshooting, and upgrades in Kona, Waimea, and Hilo.',
-  keywords: 'electrician big island, electrical services hawaii, electrical repair kona, licensed electrician waimea, electrical installation hilo, electrical troubleshooting, circuit breaker repair, lighting installation, electrical upgrades big island, emergency electrician',
+  title: 'Minor Electrical Services Big Island Hawaii | ReefTech Solutions',
+  description: 'Minor electrical services on Big Island Hawaii. Outlet repairs, switch replacement, lighting installation, and basic electrical work in Kona, Waimea, and Hilo.',
+  keywords: 'electrical services big island, electrical repair kona, outlet repair waimea, lighting installation hilo, switch replacement, electrical troubleshooting, light fixture installation, ceiling fan installation, minor electrical work big island',
   openGraph: {
-    title: 'Electrical Services Big Island Hawaii | Licensed Electrician | ReefTech Solutions',
-    description: 'Professional electrical services on Big Island Hawaii. Licensed electrician for installations, repairs, troubleshooting, and upgrades.',
+    title: 'Minor Electrical Services Big Island Hawaii | ReefTech Solutions',
+    description: 'Minor electrical services on Big Island Hawaii. Outlet repairs, switch replacement, lighting installation, and basic electrical work.',
     url: 'https://reeftechsolutions.com/electrical-services',
     type: 'website',
   },
@@ -25,10 +25,10 @@ export default function ElectricalServicesPage() {
               <Zap className="w-12 h-12" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Licensed Electrician Big Island Hawaii
+              Minor Electrical Services Big Island Hawaii
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-yellow-100">
-              Expert electrical installations, repairs, and upgrades across Big Island
+              Outlet repairs, switch replacement, lighting installation, and basic electrical work across Big Island
             </p>
             <div className="flex flex-wrap gap-4 justify-center text-sm">
               <div className="flex items-center gap-2">
@@ -64,13 +64,13 @@ export default function ElectricalServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900">Electrical Repairs</h3>
                 <p className="text-gray-600 mb-4">
-                  Fast and reliable electrical repair services for homes and businesses. From outlet repairs to circuit troubleshooting.
+                  Basic electrical repair services for minor issues. Outlet and switch repairs, simple troubleshooting.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Outlet & switch repair</li>
-                  <li>• Circuit breaker issues</li>
-                  <li>• Electrical troubleshooting</li>
-                  <li>• Power outage diagnosis</li>
+                  <li>• Replace damaged outlets</li>
+                  <li>• Switch replacement</li>
+                  <li>• Basic troubleshooting</li>
                 </ul>
               </div>
 
@@ -96,32 +96,15 @@ export default function ElectricalServicesPage() {
                 <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                   <Cable className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Electrical Installations</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Light Fixtures & Fans</h3>
                 <p className="text-gray-600 mb-4">
-                  Complete electrical installation services for new construction, renovations, and system upgrades.
+                  Installation and replacement of light fixtures, ceiling fans, and other basic electrical fixtures.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• New outlet installation</li>
-                  <li>• Panel upgrades</li>
-                  <li>• Dedicated circuits</li>
-                  <li>• EV charger installation</li>
-                </ul>
-              </div>
-
-              {/* Emergency Electrical */}
-              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                  <ShieldAlert className="w-8 h-8 text-red-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Emergency Electrical</h3>
-                <p className="text-gray-600 mb-4">
-                  Emergency electrical services available for urgent repairs and safety hazards across Big Island.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Power failures</li>
-                  <li>• Electrical hazards</li>
-                  <li>• Burning smell issues</li>
-                  <li>• Sparking outlets</li>
+                  <li>• Light fixture installation</li>
+                  <li>• Ceiling fan installation</li>
+                  <li>• Fixture replacement</li>
+                  <li>• Dimmer switch installation</li>
                 </ul>
               </div>
 
@@ -130,34 +113,18 @@ export default function ElectricalServicesPage() {
                 <div className="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                   <Zap className="w-8 h-8 text-purple-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Commercial Electrical</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Commercial Minor Work</h3>
                 <p className="text-gray-600 mb-4">
-                  Comprehensive commercial electrical services for offices, retail spaces, and business facilities.
+                  Minor electrical work for commercial properties including outlet repairs and light fixture installation.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Office electrical work</li>
-                  <li>• Retail installations</li>
-                  <li>• Emergency lighting</li>
-                  <li>• Electrical maintenance</li>
+                  <li>• Outlet repairs</li>
+                  <li>• Light fixture replacement</li>
+                  <li>• Switch installation</li>
+                  <li>• Basic electrical fixes</li>
                 </ul>
               </div>
 
-              {/* Safety Inspections */}
-              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                  <ShieldAlert className="w-8 h-8 text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Safety Inspections</h3>
-                <p className="text-gray-600 mb-4">
-                  Thorough electrical safety inspections to identify potential hazards and ensure code compliance.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Home electrical inspections</li>
-                  <li>• Code compliance checks</li>
-                  <li>• Safety assessments</li>
-                  <li>• Pre-purchase inspections</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -178,9 +145,9 @@ export default function ElectricalServicesPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Licensed & Certified</h3>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Insured & Reliable</h3>
                   <p className="text-gray-600">
-                    Fully licensed electrician with proper certifications and insurance for your protection and peace of mind.
+                    Insured handyman service specializing in minor electrical work for your protection and peace of mind.
                   </p>
                 </div>
               </div>
@@ -206,9 +173,9 @@ export default function ElectricalServicesPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Expert Workmanship</h3>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Quality Workmanship</h3>
                   <p className="text-gray-600">
-                    Experienced electrician with attention to detail and commitment to quality electrical installations.
+                    Experienced handyman with attention to detail and commitment to quality electrical repairs and installations.
                   </p>
                 </div>
               </div>
@@ -220,9 +187,9 @@ export default function ElectricalServicesPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">Code Compliant</h3>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">Safety Focused</h3>
                   <p className="text-gray-600">
-                    All electrical work performed to meet or exceed local electrical codes and safety standards.
+                    All minor electrical work performed with safety as the top priority following best practices.
                   </p>
                 </div>
               </div>
@@ -236,7 +203,7 @@ export default function ElectricalServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-              Common Electrical Problems We Fix
+              Common Minor Electrical Issues We Handle
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-md p-6">
@@ -252,16 +219,6 @@ export default function ElectricalServicesPage() {
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3 className="font-bold text-lg mb-3 text-gray-900 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-yellow-600" />
-                  Tripped Breakers
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Frequent circuit breaker trips indicating overloaded circuits or electrical faults.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="font-bold text-lg mb-3 text-gray-900 flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-yellow-600" />
                   Dead Outlets
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -269,15 +226,6 @@ export default function ElectricalServicesPage() {
                 </p>
               </div>
               
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="font-bold text-lg mb-3 text-gray-900 flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-yellow-600" />
-                  Electrical Surges
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Power surges damaging electronics caused by faulty wiring or external factors.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -307,10 +255,10 @@ export default function ElectricalServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Need an Electrician? We&apos;re Ready to Help
+              Need Minor Electrical Work? We&apos;re Ready to Help
             </h2>
             <p className="text-xl mb-8 text-yellow-100">
-              From simple repairs to complex installations, our licensed electrician is here for all your electrical needs.
+              From outlet repairs to light fixture installations, we handle minor electrical work safely and efficiently.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -353,7 +301,7 @@ export default function ElectricalServicesPage() {
               '@type': 'State',
               'name': 'Hawaii',
             },
-            'description': 'Professional electrical services on Big Island Hawaii including electrical installations, repairs, troubleshooting, and safety inspections by licensed electrician.',
+            'description': 'Minor electrical services on Big Island Hawaii including outlet repairs, switch replacement, lighting installation, and basic electrical work.',
             'serviceType': 'Electrical Services',
           }),
         }}

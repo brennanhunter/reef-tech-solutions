@@ -276,16 +276,6 @@ export default function ServicesSection() {
 						</div>
 					</div>
 
-					{/* Service Image */}
-					<div className="rounded-lg overflow-hidden shadow-lg">
-						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img 
-							src="/photos/services/sauna-controller.jpg" 
-							alt="Sauna Control Panel" 
-							className="w-full h-auto"
-						/>
-					</div>
-
 					<p>We provide comprehensive installation, maintenance, and repair services for luxury residential and commercial spa facilities.</p>
 
 					<div className="space-y-5">
@@ -597,7 +587,7 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 				</div>
 				{isSauna && (
 					<div className="mt-8">
-						<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+						<div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
 							
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -612,6 +602,11 @@ function CategoryBlock({ category, index, onOpen }: { category: Category; index:
 							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img src="/photos/brand-pictures/infra-red-sauna.jpg" alt="Infrared sauna installation" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
+							</div>
+							<div className="relative h-44 sm:h-52 overflow-hidden rounded-xl shadow-md group z-[9999]">
+								{/* eslint-disable-next-line @next/next/no-img-element */}
+								<img src="/photos/services/sauna-controller.jpg" alt="Sauna control panel" className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" loading="lazy" />
 								<div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 							</div>
 						</div>

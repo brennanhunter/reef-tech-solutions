@@ -276,6 +276,16 @@ export default function ServicesSection() {
 						</div>
 					</div>
 
+					{/* Service Image */}
+					<div className="rounded-lg overflow-hidden shadow-lg">
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img 
+							src="/photos/services/sauna-controller.jpg" 
+							alt="Sauna Control Panel" 
+							className="w-full h-auto"
+						/>
+					</div>
+
 					<p>We provide comprehensive installation, maintenance, and repair services for luxury residential and commercial spa facilities.</p>
 
 					<div className="space-y-5">

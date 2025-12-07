@@ -60,7 +60,7 @@ export default function RequestFormSection() {
           />
         </div>
         {/* Call to action below form */}
-        <div className="flex justify-end items-center gap-16 sm:gap-20 md:gap-24 lg:gap-28 mt-12 max-w-6xl mx-auto">
+        <div className="flex justify-end items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 mt-12 max-w-6xl mx-auto">
           <a 
             href="https://banksocial.io" 
             target="_blank" 
@@ -84,6 +84,32 @@ export default function RequestFormSection() {
             <img 
               src="/photos/joey-wallet.png" 
               alt="Joey Wallet" 
+              className="w-24 h-24 rounded-lg hover:opacity-80 transition-opacity duration-300"
+            />
+          </a>
+          <a 
+            href="https://www.saucerswap.finance/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:scale-105 transition-transform duration-300"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/photos/saucer-swap.png" 
+              alt="SaucerSwap" 
+              className="w-24 h-24 rounded-lg hover:opacity-80 transition-opacity duration-300"
+            />
+          </a>
+          <a 
+            href="https://lobstr.co/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:scale-105 transition-transform duration-300"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/photos/lobster.png" 
+              alt="Lobstr" 
               className="w-24 h-24 rounded-lg hover:opacity-80 transition-opacity duration-300"
             />
           </a>
